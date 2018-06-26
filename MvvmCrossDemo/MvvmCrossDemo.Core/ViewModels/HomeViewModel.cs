@@ -17,8 +17,8 @@ namespace MvvmCrossDemo.Core.ViewModels
         private string _text = "Hello MvvmCross";
         public string Text
         {
-            get { return _text; }
-            set { SetProperty(ref _text, value); }
+            get => _text;
+            set => SetProperty(ref _text, value);
         }
     }
 }
