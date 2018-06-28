@@ -2,17 +2,17 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
-using MvvmCross.Commands;
+using Mvvm;
 using MvvmCross.ViewModels;
 using MvvmCrossDemo.Core.Services;
 
 namespace MvvmCrossDemo.Core.ViewModels
 {
-    public class HomeViewModel : MvxViewModel
+    public class TipViewModel : MvxViewModel
     {
         private readonly ICalculationService _calculationService;
 
-        public HomeViewModel(ICalculationService calculationService)
+        public TipViewModel(ICalculationService calculationService)
         {
             _calculationService = calculationService;
         }
@@ -71,24 +71,5 @@ namespace MvvmCrossDemo.Core.ViewModels
         }
 
 
-
-        //public IMvxCommand ResetTextCommand => new MvxCommand(ResetText);
-        //private void ResetText()
-        //{
-        //    Text = "Hello MvvmCross";
-        //}
-
-        //private string _text = "Hello MvvmCross";
-        //public string Text
-        //{
-        //    get => _text;
-        //    set => SetProperty(ref _text, value);
-        //}
-
-        #region MyRegion
-
-        
-
-        #endregion
     }
 }
