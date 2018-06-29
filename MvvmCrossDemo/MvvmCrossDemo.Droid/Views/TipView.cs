@@ -7,12 +7,12 @@ namespace MvvmCrossDemo.Droid.Views
 {
     [MvxActivityPresentation]
     [Activity(Label = "Tip Calculator", MainLauncher = true)]
-    public class HomeView : BaseView
+    public class TipView : BaseView
     {
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
-            SetContentView(Resource.Layout.HomeView);
+            SetContentView(Resource.Layout.TipView);
         }
     }
 }

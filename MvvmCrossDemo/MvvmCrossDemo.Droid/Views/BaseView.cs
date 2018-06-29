@@ -19,8 +19,7 @@ namespace MvvmCrossDemo.Droid.Views
         protected override void OnResume()
         {
             base.OnResume();
-            RequestedOrientation = Android.Content.PM.ScreenOrientation.Portrait;//TODO put on config
-            //Window.SetStatusBarColor(Color.ParseColor(StaticVariables.StatusBarBlue));
+            RequestedOrientation = Android.Content.PM.ScreenOrientation.Portrait;
         }
 
         protected override void OnCreate(Bundle bundle)

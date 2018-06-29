@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
-using Mvvm;
+using MvvmCross.Commands;
 using MvvmCross.ViewModels;
 using MvvmCrossDemo.Core.Services;
 
@@ -69,6 +69,8 @@ namespace MvvmCrossDemo.Core.ViewModels
         {
             Tip = _calculationService.TipAmount(SubTotal, Generosity);
         }
+
+
 
 
     }
