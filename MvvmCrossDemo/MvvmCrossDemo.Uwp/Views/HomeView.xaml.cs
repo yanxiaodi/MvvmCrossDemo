@@ -23,7 +23,7 @@ namespace MvvmCrossDemo.Uwp.Views
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    [MvxViewFor(typeof(HomeViewModel))]
+    [MvxViewFor(typeof(PostListViewModel))]
     public sealed partial class HomeView : BaseView
     {
         public HomeView()

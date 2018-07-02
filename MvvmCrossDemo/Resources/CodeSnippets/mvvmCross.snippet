@@ -6,7 +6,7 @@
         <SnippetType>Expansion</SnippetType>
       </SnippetTypes>
       <Title>MvvmCross property</Title>
-      <Author>XiaodiYan</Author>
+      <Author>Xiaodi Yan</Author>
       <Shortcut>mvxpropdp</Shortcut>
       <Description>
         A property in a ViewModel in the Xamarin project with MvvmCross.
@@ -19,17 +19,17 @@
         </Import>
       </Imports>
       <Declarations>
-        <Literal Editable="true">
-          <ID>type</ID>
-          <ToolTip>Property type</ToolTip>
-          <Default>string</Default>
-        </Literal>
-        <Literal Editable="true">
+        <Literal>
           <ID>Property</ID>
           <ToolTip>Property name</ToolTip>
           <Default>Property</Default>
         </Literal>
-        <Literal Editable="true">
+        <Object>
+          <ID>type</ID>
+          <ToolTip>Property type</ToolTip>
+          <Default>string</Default>
+        </Object>
+        <Literal>
           <ID>property</ID>
           <ToolTip>Private property name</ToolTip>
           <Default>property</Default>
@@ -66,7 +66,7 @@
         </Import>
       </Imports>
       <Declarations>
-        <Literal Editable="true">
+        <Literal>
           <ID>Command</ID>
           <ToolTip>Command name</ToolTip>
           <Default>MyCommand</Default>

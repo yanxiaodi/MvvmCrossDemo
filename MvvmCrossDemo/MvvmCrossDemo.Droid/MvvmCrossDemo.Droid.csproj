@@ -63,7 +63,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SplashScreen.cs" />
     <Compile Include="Views\TipView.cs" />
-    <Compile Include="Views\HomeView.cs" />
+    <Compile Include="Views\PostListView.cs" />
     <Compile Include="Views\BaseView.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -119,13 +119,18 @@
     </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\HomeView.axml">
+    <AndroidResource Include="Resources\layout\PostListView.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\TipView.axml">
       <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\PostItem.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

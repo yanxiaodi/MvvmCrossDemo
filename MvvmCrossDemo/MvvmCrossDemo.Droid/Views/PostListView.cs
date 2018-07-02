@@ -6,13 +6,13 @@ using MvvmCross.Platforms.Android.Presenters.Attributes;
 namespace MvvmCrossDemo.Droid.Views
 {
     [MvxActivityPresentation]
-    [Activity(Label = "Tip Calculator", MainLauncher = true)]
-    public class HomeView : BaseView
+    [Activity(Label = "MvvmCross Demo", MainLauncher = true)]
+    public class PostListView : BaseView
     {
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
-            SetContentView(Resource.Layout.HomeView);
+            SetContentView(Resource.Layout.PostListView);
         }
     }
 }
