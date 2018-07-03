@@ -12,7 +12,6 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
-using MvvmCross.Platforms.Uap.Views;
 using MvvmCross.ViewModels;
 using MvvmCrossDemo.Core.ViewModels;
 
@@ -20,13 +19,10 @@ using MvvmCrossDemo.Core.ViewModels;
 
 namespace MvvmCrossDemo.Uwp.Views
 {
-    /// <summary>
-    /// An empty page that can be used on its own or navigated to within a Frame.
-    /// </summary>
     [MvxViewFor(typeof(PostListViewModel))]
-    public sealed partial class HomeView : BaseView
+    public sealed partial class PostListView : BaseView
     {
-        public HomeView()
+        public PostListView()
         {
             this.InitializeComponent();
         }

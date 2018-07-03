@@ -1755,12 +1755,6 @@ namespace MvvmCrossDemo.Droid
 			// aapt resource value: 0x7f07000a
 			public const int abc_text_size_title_material_toolbar = 2131165194;
 			
-			// aapt resource value: 0x7f07009b
-			public const int activity_horizontal_margin = 2131165339;
-			
-			// aapt resource value: 0x7f07009c
-			public const int activity_vertical_margin = 2131165340;
-			
 			// aapt resource value: 0x7f07008b
 			public const int compat_button_inset_horizontal_material = 2131165323;
 			
@@ -2269,26 +2263,26 @@ namespace MvvmCrossDemo.Droid
 			// aapt resource value: 0x7f020053
 			public const int avd_hide_password = 2130837587;
 			
-			// aapt resource value: 0x7f02006d
-			public const int avd_hide_password_1 = 2130837613;
+			// aapt resource value: 0x7f02006a
+			public const int avd_hide_password_1 = 2130837610;
 			
-			// aapt resource value: 0x7f02006e
-			public const int avd_hide_password_2 = 2130837614;
+			// aapt resource value: 0x7f02006b
+			public const int avd_hide_password_2 = 2130837611;
 			
-			// aapt resource value: 0x7f02006f
-			public const int avd_hide_password_3 = 2130837615;
+			// aapt resource value: 0x7f02006c
+			public const int avd_hide_password_3 = 2130837612;
 			
 			// aapt resource value: 0x7f020054
 			public const int avd_show_password = 2130837588;
 			
-			// aapt resource value: 0x7f020070
-			public const int avd_show_password_1 = 2130837616;
+			// aapt resource value: 0x7f02006d
+			public const int avd_show_password_1 = 2130837613;
 			
-			// aapt resource value: 0x7f020071
-			public const int avd_show_password_2 = 2130837617;
+			// aapt resource value: 0x7f02006e
+			public const int avd_show_password_2 = 2130837614;
 			
-			// aapt resource value: 0x7f020072
-			public const int avd_show_password_3 = 2130837618;
+			// aapt resource value: 0x7f02006f
+			public const int avd_show_password_3 = 2130837615;
 			
 			// aapt resource value: 0x7f020055
 			public const int design_bottom_navigation_item_background = 2130837589;
@@ -2309,58 +2303,49 @@ namespace MvvmCrossDemo.Droid
 			public const int design_snackbar_background = 2130837594;
 			
 			// aapt resource value: 0x7f02005b
-			public const int ic_dashboard_black_24dp = 2130837595;
+			public const int navigation_empty_icon = 2130837595;
 			
 			// aapt resource value: 0x7f02005c
-			public const int ic_home_black_24dp = 2130837596;
+			public const int notification_action_background = 2130837596;
 			
 			// aapt resource value: 0x7f02005d
-			public const int ic_notifications_black_24dp = 2130837597;
+			public const int notification_bg = 2130837597;
 			
 			// aapt resource value: 0x7f02005e
-			public const int navigation_empty_icon = 2130837598;
+			public const int notification_bg_low = 2130837598;
 			
 			// aapt resource value: 0x7f02005f
-			public const int notification_action_background = 2130837599;
+			public const int notification_bg_low_normal = 2130837599;
 			
 			// aapt resource value: 0x7f020060
-			public const int notification_bg = 2130837600;
+			public const int notification_bg_low_pressed = 2130837600;
 			
 			// aapt resource value: 0x7f020061
-			public const int notification_bg_low = 2130837601;
+			public const int notification_bg_normal = 2130837601;
 			
 			// aapt resource value: 0x7f020062
-			public const int notification_bg_low_normal = 2130837602;
+			public const int notification_bg_normal_pressed = 2130837602;
 			
 			// aapt resource value: 0x7f020063
-			public const int notification_bg_low_pressed = 2130837603;
-			
-			// aapt resource value: 0x7f020064
-			public const int notification_bg_normal = 2130837604;
-			
-			// aapt resource value: 0x7f020065
-			public const int notification_bg_normal_pressed = 2130837605;
-			
-			// aapt resource value: 0x7f020066
-			public const int notification_icon_background = 2130837606;
-			
-			// aapt resource value: 0x7f02006b
-			public const int notification_template_icon_bg = 2130837611;
-			
-			// aapt resource value: 0x7f02006c
-			public const int notification_template_icon_low_bg = 2130837612;
-			
-			// aapt resource value: 0x7f020067
-			public const int notification_tile_bg = 2130837607;
+			public const int notification_icon_background = 2130837603;
 			
 			// aapt resource value: 0x7f020068
-			public const int notify_panel_notification_icon_bg = 2130837608;
+			public const int notification_template_icon_bg = 2130837608;
 			
 			// aapt resource value: 0x7f020069
-			public const int tooltip_frame_dark = 2130837609;
+			public const int notification_template_icon_low_bg = 2130837609;
 			
-			// aapt resource value: 0x7f02006a
-			public const int tooltip_frame_light = 2130837610;
+			// aapt resource value: 0x7f020064
+			public const int notification_tile_bg = 2130837604;
+			
+			// aapt resource value: 0x7f020065
+			public const int notify_panel_notification_icon_bg = 2130837605;
+			
+			// aapt resource value: 0x7f020066
+			public const int tooltip_frame_dark = 2130837606;
+			
+			// aapt resource value: 0x7f020067
+			public const int tooltip_frame_light = 2130837607;
 			
 			static Drawable()
 			{
@@ -2660,17 +2645,8 @@ namespace MvvmCrossDemo.Droid
 			// aapt resource value: 0x7f08002a
 			public const int multiply = 2131230762;
 			
-			// aapt resource value: 0x7f0800b2
-			public const int navigation_dashboard = 2131230898;
-			
 			// aapt resource value: 0x7f080095
 			public const int navigation_header_container = 2131230869;
-			
-			// aapt resource value: 0x7f0800b1
-			public const int navigation_home = 2131230897;
-			
-			// aapt resource value: 0x7f0800b3
-			public const int navigation_notifications = 2131230899;
 			
 			// aapt resource value: 0x7f08003d
 			public const int never = 2131230781;
@@ -3137,7 +3113,7 @@ namespace MvvmCrossDemo.Droid
 			public const int notification_template_part_time = 2130968630;
 			
 			// aapt resource value: 0x7f040037
-			public const int PostItem = 2130968631;
+			public const int post_item = 2130968631;
 			
 			// aapt resource value: 0x7f040038
 			public const int PostListView = 2130968632;
@@ -3169,22 +3145,6 @@ namespace MvvmCrossDemo.Droid
 			}
 			
 			private Layout()
-			{
-			}
-		}
-		
-		public partial class Menu
-		{
-			
-			// aapt resource value: 0x7f0e0000
-			public const int navigation = 2131623936;
-			
-			static Menu()
-			{
-				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
-			}
-			
-			private Menu()
 			{
 			}
 		}
@@ -3301,6 +3261,9 @@ namespace MvvmCrossDemo.Droid
 			// aapt resource value: 0x7f090010
 			public const int abc_toolbar_collapse_description = 2131296272;
 			
+			// aapt resource value: 0x7f090028
+			public const int action_settings = 2131296296;
+			
 			// aapt resource value: 0x7f090027
 			public const int app_name = 2131296295;
 			
@@ -3333,15 +3296,6 @@ namespace MvvmCrossDemo.Droid
 			
 			// aapt resource value: 0x7f090026
 			public const int status_bar_notification_info_overflow = 2131296294;
-			
-			// aapt resource value: 0x7f090029
-			public const int title_dashboard = 2131296297;
-			
-			// aapt resource value: 0x7f090028
-			public const int title_home = 2131296296;
-			
-			// aapt resource value: 0x7f09002a
-			public const int title_notifications = 2131296298;
 			
 			static String()
 			{

@@ -6,7 +6,7 @@ using MvvmCross.Platforms.Android.Presenters.Attributes;
 namespace MvvmCrossDemo.Droid.Views
 {
     [MvxActivityPresentation]
-    [Activity(Label = "Tip Calculator", MainLauncher = true)]
+    [Activity(Label = "Tip Calculator", MainLauncher = false)]
     public class TipView : BaseView
     {
         protected override void OnCreate(Bundle bundle)

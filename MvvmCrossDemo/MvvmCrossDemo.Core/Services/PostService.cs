@@ -7,21 +7,19 @@ using System.Threading.Tasks;
 
 namespace MvvmCrossDemo.Core.Services
 {
-    public class PostService
+    public class PostService : IPostService
     {
-        private readonly HttpClient _httpClient;
-        private string apiUrl = "https://jsonplaceholder.typicode.com/";
+        private static readonly HttpClient _httpClient = new HttpClient();
+        private string apiUrl = "http://jsonplaceholder.typicode.com/";
 
-        public PostService()
-        {
-            _httpClient = new HttpClient();
-        }
+
 
         public async Task<ResponseMessage<List<Post>>> GetPostList()
         {
             try
             {
-                var response = await _httpClient.GetAsync($"{apiUrl}posts");
+                HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Get, $"{apiUrl}posts");
+                var response = await _httpClient.SendAsync(request);
                 if (response.StatusCode == System.Net.HttpStatusCode.OK)
                 {
                     var result = await response.ReadAsJsonAsync<List<Post>>();

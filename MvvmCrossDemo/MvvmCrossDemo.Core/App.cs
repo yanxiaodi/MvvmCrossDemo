@@ -18,7 +18,6 @@ namespace MvvmCrossDemo.Core
                 .AsInterfaces()
                 .RegisterAsLazySingleton();
             RegisterAppStart<PostListViewModel>();
-            Mvx.RegisterType<ICalculationService, CalculationService>();
         }
     }
 }

@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
-using Mvvm;
 using MvvmCross.Commands;
 using MvvmCross.ViewModels;
 using MvvmCrossDemo.Core.Models;
@@ -22,6 +21,8 @@ namespace MvvmCrossDemo.Core.ViewModels
         public override void Prepare()
         {
             // This is the first method to be called after construction
+            PostList = new MvxObservableCollection<Post>();
+            
         }
 
         public override async Task Initialize()
@@ -29,10 +30,27 @@ namespace MvvmCrossDemo.Core.ViewModels
             // Async initialization, YEY!
 
             await base.Initialize();
+            PostList.Add(new Post(){ Title = "test"});
+            PostList.Add(new Post() { Title = "test" });
+            PostList.Add(new Post() { Title = "test" });
+            PostList.Add(new Post() { Title = "test" });
+            PostList.Add(new Post() { Title = "test" });
+            PostList.Add(new Post() { Title = "test" });
+            PostList.Add(new Post() { Title = "test" });
+            PostList.Add(new Post() { Title = "test" });
+            PostList.Add(new Post() { Title = "test" });
+            PostList.Add(new Post() { Title = "test" });
+            PostList.Add(new Post() { Title = "test" });
+            PostList.Add(new Post() { Title = "test" });
+            PostList.Add(new Post() { Title = "test" });
+            PostList.Add(new Post() { Title = "test" });
+            PostList.Add(new Post() { Title = "test" });
+            PostList.Add(new Post() { Title = "test" });
+            PostList.Add(new Post() { Title = "test" });
             var response = await _postService.GetPostList();
             if (response.IsSuccess)
             {
-                PostList = new MvxObservableCollection<Post>(response.Result);
+                PostList.AddRange(response.Result);
             }
             else
             {
@@ -52,6 +70,13 @@ namespace MvvmCrossDemo.Core.ViewModels
 
 
 
+        #region MyCommandCommand;
+        public IMvxCommand MyCommandCommand => new MvxCommand(MyCommand);
+        private void MyCommand()
+        {
+            // Implement your logic here.
+        }
+        #endregion
 
     }
 }
