@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 using MvvmCross.Commands;
 using MvvmCross.ViewModels;
 using MvvmCrossDemo.Core.Models;
@@ -30,32 +31,8 @@ namespace MvvmCrossDemo.Core.ViewModels
             // Async initialization, YEY!
 
             await base.Initialize();
-            PostList.Add(new Post(){ Title = "test"});
-            PostList.Add(new Post() { Title = "test" });
-            PostList.Add(new Post() { Title = "test" });
-            PostList.Add(new Post() { Title = "test" });
-            PostList.Add(new Post() { Title = "test" });
-            PostList.Add(new Post() { Title = "test" });
-            PostList.Add(new Post() { Title = "test" });
-            PostList.Add(new Post() { Title = "test" });
-            PostList.Add(new Post() { Title = "test" });
-            PostList.Add(new Post() { Title = "test" });
-            PostList.Add(new Post() { Title = "test" });
-            PostList.Add(new Post() { Title = "test" });
-            PostList.Add(new Post() { Title = "test" });
-            PostList.Add(new Post() { Title = "test" });
-            PostList.Add(new Post() { Title = "test" });
-            PostList.Add(new Post() { Title = "test" });
-            PostList.Add(new Post() { Title = "test" });
-            var response = await _postService.GetPostList();
-            if (response.IsSuccess)
-            {
-                PostList.AddRange(response.Result);
-            }
-            else
-            {
-                // TODO； Show some error messages.
-            }
+            await GetPostsAsync();
+
         }
 
 
@@ -70,13 +47,21 @@ namespace MvvmCrossDemo.Core.ViewModels
 
 
 
-        #region MyCommandCommand;
-        public IMvxCommand MyCommandCommand => new MvxCommand(MyCommand);
-        private void MyCommand()
+        //#region GetPostsCommand;
+        //public IMvxAsyncCommand GetPostsCommand => new MvxAsyncCommand(GetPostsAsync);
+        private async Task GetPostsAsync()
         {
             // Implement your logic here.
+            var response = await _postService.GetPostList();
+            if (response.IsSuccess)
+            {
+                PostList.AddRange(response.Result);
+            }
         }
-        #endregion
+        //#endregion
+
+
+
 
     }
 }

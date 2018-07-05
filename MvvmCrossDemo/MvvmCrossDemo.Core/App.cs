@@ -17,7 +17,8 @@ namespace MvvmCrossDemo.Core
                 .EndingWith("Service")
                 .AsInterfaces()
                 .RegisterAsLazySingleton();
-            RegisterAppStart<PostListViewModel>();
+            //RegisterAppStart<FirstViewModel>();
+            RegisterCustomAppStart<CustomMvxAppStart<PostListViewModel>>();
         }
     }
 }

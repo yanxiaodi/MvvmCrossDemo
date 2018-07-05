@@ -13,11 +13,6 @@
       </Description>
     </Header>
     <Snippet>
-      <Imports>
-        <Import>
-          <Namespace>Mvvm</Namespace>
-        </Import>
-      </Imports>
       <Declarations>
         <Literal>
           <ID>Property</ID>
@@ -60,11 +55,6 @@
       </Description>
     </Header>
     <Snippet>
-      <Imports>
-        <Import>
-          <Namespace>Mvvm</Namespace>
-        </Import>
-      </Imports>
       <Declarations>
         <Literal>
           <ID>Command</ID>
@@ -77,6 +67,38 @@
         #region $Command$Command;
 		    public IMvxCommand $Command$Command => new MvxCommand($Command$);
         private void $Command$()
+        {
+            // Implement your logic here.
+        }
+		    #endregion]]>
+      </Code>
+    </Snippet>
+  </CodeSnippet>
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>MvvmCross async command</Title>
+      <Author>XiaodiYan</Author>
+      <Shortcut>mvxcmdasync</Shortcut>
+      <Description>
+        An sync command in a ViewModel in the Xamarin project with MvvmCross.
+      </Description>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal>
+          <ID>Command</ID>
+          <ToolTip>Command name</ToolTip>
+          <Default>MyCommand</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="csharp">
+        <![CDATA[
+        #region $Command$AsyncCommand;
+		    public IMvxAsyncCommand $Command$AsyncCommand => new MvxAsyncCommand($Command$Async);
+        private async Task $Command$Async()
         {
             // Implement your logic here.
         }

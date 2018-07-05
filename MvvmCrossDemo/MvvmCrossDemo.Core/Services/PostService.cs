@@ -18,8 +18,7 @@ namespace MvvmCrossDemo.Core.Services
         {
             try
             {
-                HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Get, $"{apiUrl}posts");
-                var response = await _httpClient.SendAsync(request);
+                var response = await _httpClient.GetAsync($"{apiUrl}posts");
                 if (response.StatusCode == System.Net.HttpStatusCode.OK)
                 {
                     var result = await response.ReadAsJsonAsync<List<Post>>();
