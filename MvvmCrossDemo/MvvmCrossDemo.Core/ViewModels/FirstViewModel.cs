@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 using MvvmCross;
 using MvvmCross.Commands;
 using MvvmCross.ViewModels;
@@ -42,5 +43,9 @@ namespace MvvmCrossDemo.Core.ViewModels
             Greeting = _greetingService.GetGreetingText(UserName);
         }
         #endregion
+
+
+
+
     }
 }

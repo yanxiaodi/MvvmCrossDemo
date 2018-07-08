@@ -6,13 +6,28 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    xmlns:i="using:Microsoft.Xaml.Interactivity"
+    xmlns:core="using:Microsoft.Xaml.Interactions.Core"
+    x:Name="mainPage">
     <Grid>
         <ListView ItemsSource="{Binding PostList}">
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+                    <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                </Style>
+            </ListView.ItemContainerStyle>
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <TextBlock Text="{Binding Title}"></TextBlock>
+                    <StackPanel>
+                        <i:Interaction.Behaviors>
+                            <core:EventTriggerBehavior EventName="Tapped">
+                                <core:InvokeCommandAction Command="{Binding DataContext.ShowPostDetailAsyncCommand, ElementName=mainPage}" CommandParameter="{Binding}"></core:InvokeCommandAction>
+                            </core:EventTriggerBehavior>
+                        </i:Interaction.Behaviors>
+                        <TextBlock Text="{Binding Title}" Style="{StaticResource TitleTextBlockStyle}"></TextBlock>
+                        <TextBlock Text="{Binding Body}"></TextBlock>
+                    </StackPanel>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>

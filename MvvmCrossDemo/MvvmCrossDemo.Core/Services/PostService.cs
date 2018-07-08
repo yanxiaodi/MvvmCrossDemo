@@ -14,7 +14,7 @@ namespace MvvmCrossDemo.Core.Services
 
 
 
-        public async Task<ResponseMessage<List<Post>>> GetPostList()
+        public async Task<ResponseMessage<List<Post>>> GetPosts()
         {
             try
             {
@@ -85,5 +85,42 @@ namespace MvvmCrossDemo.Core.Services
                 };
             }
         }
+
+        public async Task<ResponseMessage<List<Comment>>> GetComments(int postId)
+        {
+            try
+            {
+                var response = await _httpClient.GetAsync($"{apiUrl}posts/{postId}/comments");
+                if (response.StatusCode == System.Net.HttpStatusCode.OK)
+                {
+                    var result = await response.ReadAsJsonAsync<List<Comment>>();
+                    return new ResponseMessage<List<Comment>>
+                    {
+                        IsSuccess = true,
+                        Result = result
+                    };
+                }
+                else
+                {
+                    return new ResponseMessage<List<Comment>>
+                    {
+                        IsSuccess = false,
+                        // Show the detailed error message here according to the response.
+                        Message = "Errors"
+                    };
+                }
+            }
+            catch (Exception e)
+            {
+                // TODO: Log the exception here.
+                return new ResponseMessage<List<Comment>>
+                {
+                    IsSuccess = false,
+                    // Show the detailed error message here.
+                    Message = "Errors"
+                };
+            }
+        }
+
     }
 }

@@ -65,7 +65,19 @@
       <Code Language="csharp">
         <![CDATA[
         #region $Command$Command;
-		    public IMvxCommand $Command$Command => new MvxCommand($Command$);
+        private IMvxCommand _$command$Command;
+		    public IMvxCommand $Command$Command
+        {
+            get
+            {
+                if (_$command$Command != null)
+                {
+                    return _$command$Command;
+                }
+                _$command$Command = new MvxCommand($Command$);
+                return _$command$Command;
+            }
+        }
         private void $Command$()
         {
             // Implement your logic here.
@@ -93,16 +105,33 @@
           <ToolTip>Command name</ToolTip>
           <Default>MyCommand</Default>
         </Literal>
+        <Literal>
+          <ID>command</ID>
+          <ToolTip>Private command name</ToolTip>
+          <Default>myCommand</Default>
+        </Literal>
       </Declarations>
       <Code Language="csharp">
         <![CDATA[
         #region $Command$AsyncCommand;
-		    public IMvxAsyncCommand $Command$AsyncCommand => new MvxAsyncCommand($Command$Async);
+        private IMvxAsyncCommand _$command$AsyncCommand;
+        public IMvxAsyncCommand $Command$AsyncCommand
+        {
+            get
+            {
+                if (_$command$AsyncCommand != null)
+                {
+                    return _$command$AsyncCommand;
+                }
+                _$command$AsyncCommand = new MvxAsyncCommand($Command$Async);
+                return _$command$AsyncCommand;
+            }
+        }
         private async Task $Command$Async()
         {
             // Implement your logic here.
         }
-		    #endregion]]>
+        #endregion]]>
       </Code>
     </Snippet>
   </CodeSnippet>

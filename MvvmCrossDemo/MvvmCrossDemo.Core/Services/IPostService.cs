@@ -8,7 +8,9 @@ namespace MvvmCrossDemo.Core.Services
 {
     public interface IPostService
     {
-        Task<ResponseMessage<List<Post>>> GetPostList();
+        Task<ResponseMessage<List<Post>>> GetPosts();
         Task<ResponseMessage<Post>> GetPost(int id);
+        Task<ResponseMessage<List<Comment>>> GetComments(int postId);
+
     }
 }

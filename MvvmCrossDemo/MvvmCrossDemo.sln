@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
+# Blend for Visual Studio 15
 VisualStudioVersion = 15.0.27703.2035
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MvvmCrossDemo.Core", "MvvmCrossDemo.Core\MvvmCrossDemo.Core.csproj", "{703C7710-C22F-4CC3-BC53-225E88A532E1}"

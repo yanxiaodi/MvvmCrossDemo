@@ -67,6 +67,7 @@
     <Compile Include="SplashScreen.cs" />
     <Compile Include="Views\BaseView.cs" />
     <Compile Include="Views\FirstView.cs" />
+    <Compile Include="Views\PostDetailView.cs" />
     <Compile Include="Views\PostListView.cs" />
     <Compile Include="Views\TipView.cs" />
   </ItemGroup>
@@ -124,6 +125,16 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\FirstView.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\PostDetailView.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\comment_item.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
