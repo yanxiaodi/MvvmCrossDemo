@@ -6,7 +6,7 @@ using MvvmCross.Platforms.Android.Presenters.Attributes;
 namespace MvvmCrossDemo.Droid.Views
 {
     [MvxActivityPresentation]
-    [Activity(Label = "MvvmCross Demo", MainLauncher = true)]
+    [Activity(Label = "Post List")]
     public class PostListView : BaseView
     {
         protected override void OnCreate(Bundle bundle)

@@ -103,6 +103,9 @@
     <Compile Include="Views\PostDetailView.xaml.cs">
       <DependentUpon>PostDetailView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\PostEditView.xaml.cs">
+      <DependentUpon>PostEditView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\PostListView.xaml.cs">
       <DependentUpon>PostListView.xaml</DependentUpon>
     </Compile>
@@ -158,6 +161,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\PostDetailView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PostEditView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

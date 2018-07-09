@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace MvvmCrossDemo.Core.Models
+namespace MvvmCrossDemo.Core.Models.Dto
 {
     public class Post
     {

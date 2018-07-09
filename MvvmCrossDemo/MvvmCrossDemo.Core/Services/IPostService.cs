@@ -1,4 +1,4 @@
-﻿using MvvmCrossDemo.Core.Models;
+﻿using MvvmCrossDemo.Core.Models.Dto;
 using System;
 using System.Collections.Generic;
 using System.Text;

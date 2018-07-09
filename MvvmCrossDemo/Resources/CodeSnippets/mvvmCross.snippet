@@ -70,11 +70,7 @@
         {
             get
             {
-                if (_$command$Command != null)
-                {
-                    return _$command$Command;
-                }
-                _$command$Command = new MvxCommand($Command$);
+                _$command$Command = _$command$Command ?? new MvxCommand($Command$);
                 return _$command$Command;
             }
         }
@@ -119,11 +115,7 @@
         {
             get
             {
-                if (_$command$AsyncCommand != null)
-                {
-                    return _$command$AsyncCommand;
-                }
-                _$command$AsyncCommand = new MvxAsyncCommand($Command$Async);
+                _$command$AsyncCommand = _$command$AsyncCommand ?? new MvxAsyncCommand($Command$Async);
                 return _$command$AsyncCommand;
             }
         }

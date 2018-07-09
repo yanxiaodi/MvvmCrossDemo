@@ -1,37 +1,41 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading.Tasks;
+﻿using MvvmCross.Navigation;
 using MvvmCross.ViewModels;
 using MvvmCrossDemo.Core.Models;
 using MvvmCrossDemo.Core.Models.Dto;
 using MvvmCrossDemo.Core.Services;
+using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace MvvmCrossDemo.Core.ViewModels
 {
-    public class PostDetailViewModel : MvxViewModel<PostViewModel>
+    public class PostEditViewModel : MvxViewModel<PostViewModel>
     {
         private readonly IPostService _postService;
+        private readonly IMvxNavigationService _navigationService;
+
         private int _postId;
 
-        public PostDetailViewModel(IPostService postService)
+
+        public PostEditViewModel(IPostService postService, IMvxNavigationService navigationService)
         {
             _postService = postService;
+            _navigationService = navigationService;
         }
 
         public override void Prepare(PostViewModel post)
         {
             // This is the first method to be called after construction
-            CommentList = new MvxObservableCollection<Comment>();
             _postId = post.Id;
         }
 
         public override async Task Initialize()
         {
             // Async initialization, YEY!
+
             await base.Initialize();
             await GetPost(_postId);
-            await GetComments(_postId);
         }
 
 
@@ -44,14 +48,6 @@ namespace MvvmCrossDemo.Core.ViewModels
         }
         #endregion
 
-        #region CommentList;
-        private MvxObservableCollection<Comment> _commentList;
-        public MvxObservableCollection<Comment> CommentList
-        {
-            get => _commentList;
-            set => SetProperty(ref _commentList, value);
-        }
-        #endregion
 
         private async Task GetPost(int postId)
         {
@@ -62,13 +58,6 @@ namespace MvvmCrossDemo.Core.ViewModels
             }
         }
 
-        private async Task GetComments(int postId)
-        {
-            var response = await _postService.GetComments(postId);
-            if (response.IsSuccess)
-            {
-                CommentList.AddRange(response.Result);
-            }
-        }
+
     }
 }

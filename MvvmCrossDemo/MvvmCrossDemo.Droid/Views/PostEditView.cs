@@ -14,13 +14,13 @@ using MvvmCross.Platforms.Android.Presenters.Attributes;
 namespace MvvmCrossDemo.Droid.Views
 {
     [MvxActivityPresentation]
-    [Activity(Label = "Post Detail")]
-    public class PostDetailView : BaseView
+    [Activity(Label = "Post Edit")]
+    public class PostEditView : BaseView
     {
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
-            SetContentView(Resource.Layout.PostDetailView);
+            SetContentView(Resource.Layout.PostEditView);
         }
     }
 }

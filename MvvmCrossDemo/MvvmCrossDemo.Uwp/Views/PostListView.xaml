@@ -8,8 +8,7 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
     xmlns:i="using:Microsoft.Xaml.Interactivity"
-    xmlns:core="using:Microsoft.Xaml.Interactions.Core"
-    x:Name="mainPage">
+    xmlns:core="using:Microsoft.Xaml.Interactions.Core">
     <Grid>
         <ListView ItemsSource="{Binding PostList}">
             <ListView.ItemContainerStyle>
@@ -19,14 +18,18 @@
             </ListView.ItemContainerStyle>
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <StackPanel>
-                        <i:Interaction.Behaviors>
-                            <core:EventTriggerBehavior EventName="Tapped">
-                                <core:InvokeCommandAction Command="{Binding DataContext.ShowPostDetailAsyncCommand, ElementName=mainPage}" CommandParameter="{Binding}"></core:InvokeCommandAction>
-                            </core:EventTriggerBehavior>
-                        </i:Interaction.Behaviors>
-                        <TextBlock Text="{Binding Title}" Style="{StaticResource TitleTextBlockStyle}"></TextBlock>
-                        <TextBlock Text="{Binding Body}"></TextBlock>
+                    <StackPanel HorizontalAlignment="Stretch">
+                        <StackPanel>
+                            <i:Interaction.Behaviors>
+                                <core:EventTriggerBehavior EventName="Tapped">
+                                    <core:InvokeCommandAction Command="{Binding ShowPostDetailAsyncCommand}"></core:InvokeCommandAction>
+                                </core:EventTriggerBehavior>
+                            </i:Interaction.Behaviors>
+                            <TextBlock Text="{Binding Post.Title}" Style="{StaticResource TitleTextBlockStyle}"></TextBlock>
+                            <TextBlock Text="{Binding Post.Body}"></TextBlock>
+                        </StackPanel>
+                        <Button Content="Edit" RelativePanel.Below="TxtBody" HorizontalAlignment="Right"
+                                Command="{Binding EditPostAsyncCommand}"></Button>
                     </StackPanel>
                 </DataTemplate>
             </ListView.ItemTemplate>

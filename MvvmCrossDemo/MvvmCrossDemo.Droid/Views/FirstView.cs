@@ -14,7 +14,7 @@ using MvvmCross.Platforms.Android.Presenters.Attributes;
 namespace MvvmCrossDemo.Droid.Views
 {
     [MvxActivityPresentation]
-    [Activity(Label = "First View", MainLauncher = true)]
+    [Activity(Label = "First View")]
     public class FirstView : BaseView
     {
         protected override void OnCreate(Bundle bundle)

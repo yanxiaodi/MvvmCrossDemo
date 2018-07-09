@@ -7,7 +7,7 @@
     <MvvmCross.Platforms.Android.Binding.Views.MvxListView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        local:MvxBind="ItemsSource PostList; ItemClick ShowPostDetailAsyncCommand"
+        local:MvxBind="ItemsSource PostList"
         android:layout_weight="1"
         local:MvxItemTemplate="@layout/post_item" />
 </LinearLayout>

@@ -1,12 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using AutoMapper;
 using MvvmCross.Commands;
 using MvvmCross.Navigation;
 using MvvmCross.ViewModels;
 using MvvmCrossDemo.Core.Models;
+using MvvmCrossDemo.Core.Models.Dto;
 using MvvmCrossDemo.Core.Services;
 
 namespace MvvmCrossDemo.Core.ViewModels
@@ -25,7 +28,7 @@ namespace MvvmCrossDemo.Core.ViewModels
         public override void Prepare()
         {
             // This is the first method to be called after construction
-            PostList = new MvxObservableCollection<Post>();
+            PostList = new MvxObservableCollection<WrapperPostViewModel>();
             
         }
 
@@ -40,8 +43,8 @@ namespace MvvmCrossDemo.Core.ViewModels
 
 
         #region PostList;
-        private MvxObservableCollection<Post> _postList;
-        public MvxObservableCollection<Post> PostList
+        private MvxObservableCollection<WrapperPostViewModel> _postList;
+        public MvxObservableCollection<WrapperPostViewModel> PostList
         {
             get => _postList;
             set => SetProperty(ref _postList, value);
@@ -57,35 +60,28 @@ namespace MvvmCrossDemo.Core.ViewModels
             var response = await _postService.GetPosts();
             if (response.IsSuccess)
             {
-                PostList.AddRange(response.Result);
+                PostList.AddRange(Mapper.Map<List<PostViewModel>>(response.Result)
+                    .Select(x => new WrapperPostViewModel(x, ShowPostDetailAsync, EditPostAsync)));
             }
         }
         //#endregion
 
 
 
-        #region ShowPostDetailAsyncCommand;
-        private IMvxAsyncCommand<Post> _showPostDetailAsyncCommand;
-        public IMvxAsyncCommand<Post> ShowPostDetailAsyncCommand
+
+        
+        private async void ShowPostDetailAsync(PostViewModel post)
         {
-            get
-            {
-                if (_showPostDetailAsyncCommand != null)
-                {
-                    return _showPostDetailAsyncCommand;
-                }
-                _showPostDetailAsyncCommand = new MvxAsyncCommand<Post>(async(post) => await ShowPostDetailAAsync(post));
-                return _showPostDetailAsyncCommand;
-            }
+            await _navigationService.Navigate<PostDetailViewModel, PostViewModel>(post);
         }
-        private async Task ShowPostDetailAAsync(Post post)
-        {
-            // Implement your logic here.
-            await _navigationService.Navigate<PostDetailViewModel, Post>(post);
-        }
-        #endregion
 
 
+        
+        private async void EditPostAsync(PostViewModel post)
+        {
+            await _navigationService.Navigate<PostEditViewModel, PostViewModel>(post);
+
+        }
 
 
     }

@@ -1,10 +1,10 @@
 ﻿using System;
 using MvvmCrossDemo.Core.Infrastructure.Extensions;
-using MvvmCrossDemo.Core.Models;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
 using System.Threading;
+using MvvmCrossDemo.Core.Models.Dto;
 
 namespace MvvmCrossDemo.Core.Services
 {
