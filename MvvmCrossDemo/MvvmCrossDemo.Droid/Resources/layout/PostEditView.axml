@@ -12,10 +12,23 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:scrollbars="vertical"
+        android:lines="5"
         local:MvxBind="Text Post.Body" />
-    <Button
+    <LinearLayout
+        android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Edit"
-        local:MvxBind="Click EditPostAsyncCommand" />
+        android:gravity="right">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cancel"
+            local:MvxBind="Click CancelAsyncCommand" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ok"
+            local:MvxBind="Click EditPostAsyncCommand" />
+    </LinearLayout>
 </LinearLayout>

@@ -76,12 +76,21 @@ namespace MvvmCrossDemo.Core.ViewModels
         }
 
 
-        
+
         private async void EditPostAsync(PostViewModel post)
         {
-            await _navigationService.Navigate<PostEditViewModel, PostViewModel>(post);
-
+            var result = await _navigationService.Navigate<PostEditViewModel, PostViewModel, Post>(post);
+            if (result != null)
+            {
+                var target = PostList.FirstOrDefault(x => x.Post.Id == result.Id);
+                if (target != null)
+                {
+                    target.Post.Title = result.Title;
+                    target.Post.Body = result.Body;
+                }
+            }
         }
+
 
 
     }

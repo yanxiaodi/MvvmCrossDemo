@@ -7,10 +7,11 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
+using MvvmCross.Commands;
 
 namespace MvvmCrossDemo.Core.ViewModels
 {
-    public class PostEditViewModel : MvxViewModel<PostViewModel>
+    public class PostEditViewModel : MvxViewModel<PostViewModel, Post>
     {
         private readonly IPostService _postService;
         private readonly IMvxNavigationService _navigationService;
@@ -57,6 +58,48 @@ namespace MvvmCrossDemo.Core.ViewModels
                 Post = AutoMapper.Mapper.Map<PostViewModel>(response.Result);
             }
         }
+
+
+
+
+        #region CancelAsyncCommand;
+        private IMvxAsyncCommand _cancelAsyncCommand;
+        public IMvxAsyncCommand CancelAsyncCommand
+        {
+            get
+            {
+                _cancelAsyncCommand = _cancelAsyncCommand ?? new MvxAsyncCommand(CancelAsync);
+                return _cancelAsyncCommand;
+            }
+        }
+        private async Task CancelAsync()
+        {
+            // Implement your logic here.
+            await _navigationService.Close(this);
+        }
+        #endregion
+
+
+        #region EditPostAsyncCommand;
+        private IMvxAsyncCommand _editPostAsyncCommand;
+        public IMvxAsyncCommand EditPostAsyncCommand
+        {
+            get
+            {
+                _editPostAsyncCommand = _editPostAsyncCommand ?? new MvxAsyncCommand(EditPostAsync);
+                return _editPostAsyncCommand;
+            }
+        }
+        private async Task EditPostAsync()
+        {
+            // Implement your logic here.
+            var response = await _postService.UpdatePost(Post.Id, AutoMapper.Mapper.Map<Post>(Post));
+            if (response.IsSuccess)
+            {
+                await _navigationService.Close(this, response.Result);
+            }
+        }
+        #endregion
 
 
     }

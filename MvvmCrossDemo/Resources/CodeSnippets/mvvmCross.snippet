@@ -25,18 +25,18 @@
           <Default>string</Default>
         </Object>
         <Literal>
-          <ID>property</ID>
+          <ID>pProperty</ID>
           <ToolTip>Private property name</ToolTip>
           <Default>property</Default>
         </Literal>
       </Declarations>
       <Code Language="csharp">
         <![CDATA[#region $Property$;
-		private $type$ _$property$;
+		private $type$ _$pProperty$;
         public $type$ $Property$
         {
-            get => _$property$;
-            set => SetProperty(ref _$property$, value);
+            get => _$pProperty$;
+            set => SetProperty(ref _$pProperty$, value);
         }
 		#endregion]]>
       </Code>
@@ -61,17 +61,22 @@
           <ToolTip>Command name</ToolTip>
           <Default>MyCommand</Default>
         </Literal>
+        <Literal>
+          <ID>pCommand</ID>
+          <ToolTip>Private command name</ToolTip>
+          <Default>myCommand</Default>
+        </Literal>
       </Declarations>
       <Code Language="csharp">
         <![CDATA[
         #region $Command$Command;
-        private IMvxCommand _$command$Command;
+        private IMvxCommand _$pCommand$Command;
 		    public IMvxCommand $Command$Command
         {
             get
             {
-                _$command$Command = _$command$Command ?? new MvxCommand($Command$);
-                return _$command$Command;
+                _$pCommand$Command = _$pCommand$Command ?? new MvxCommand($Command$);
+                return _$pCommand$Command;
             }
         }
         private void $Command$()
@@ -102,7 +107,7 @@
           <Default>MyCommand</Default>
         </Literal>
         <Literal>
-          <ID>command</ID>
+          <ID>pCommand</ID>
           <ToolTip>Private command name</ToolTip>
           <Default>myCommand</Default>
         </Literal>
@@ -110,13 +115,13 @@
       <Code Language="csharp">
         <![CDATA[
         #region $Command$AsyncCommand;
-        private IMvxAsyncCommand _$command$AsyncCommand;
+        private IMvxAsyncCommand _$pCommand$AsyncCommand;
         public IMvxAsyncCommand $Command$AsyncCommand
         {
             get
             {
-                _$command$AsyncCommand = _$command$AsyncCommand ?? new MvxAsyncCommand($Command$Async);
-                return _$command$AsyncCommand;
+                _$pCommand$AsyncCommand = _$pCommand$AsyncCommand ?? new MvxAsyncCommand($Command$Async);
+                return _$pCommand$AsyncCommand;
             }
         }
         private async Task $Command$Async()
