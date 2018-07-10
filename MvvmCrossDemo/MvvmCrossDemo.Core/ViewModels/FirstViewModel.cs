@@ -36,15 +36,23 @@ namespace MvvmCrossDemo.Core.ViewModels
         #endregion
 
 
+
         #region GetGreetingCommand;
-        public IMvxCommand GetGreetingCommand => new MvxCommand(GetGreeting);
+        private IMvxCommand _getGreetingCommand;
+        public IMvxCommand GetGreetingCommand
+        {
+            get
+            {
+                _getGreetingCommand = _getGreetingCommand ?? new MvxCommand(GetGreeting);
+                return _getGreetingCommand;
+            }
+        }
         private void GetGreeting()
         {
-            Greeting = _greetingService.GetGreetingText(UserName);
+            // Implement your logic here.
+            _greetingService.GetGreetingText(UserName);
         }
         #endregion
-
-
 
 
     }
