@@ -1,0 +1,38 @@
+﻿<local:BaseView
+    x:Class="MvvmCrossDemo.Uwp.Views.PostListView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MvvmCrossDemo.Uwp.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    xmlns:i="using:Microsoft.Xaml.Interactivity"
+    xmlns:core="using:Microsoft.Xaml.Interactions.Core">
+    <Grid>
+        <ListView ItemsSource="{Binding PostList}">
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+                    <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                </Style>
+            </ListView.ItemContainerStyle>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel HorizontalAlignment="Stretch">
+                        <StackPanel>
+                            <i:Interaction.Behaviors>
+                                <core:EventTriggerBehavior EventName="Tapped">
+                                    <core:InvokeCommandAction Command="{Binding ShowPostDetailAsyncCommand}"></core:InvokeCommandAction>
+                                </core:EventTriggerBehavior>
+                            </i:Interaction.Behaviors>
+                            <TextBlock Text="{Binding Post.Title}" Style="{StaticResource TitleTextBlockStyle}"></TextBlock>
+                            <TextBlock Text="{Binding Post.Body}"></TextBlock>
+                        </StackPanel>
+                        <Button Content="Edit" RelativePanel.Below="TxtBody" HorizontalAlignment="Right"
+                                Command="{Binding EditPostAsyncCommand}"></Button>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</local:BaseView>

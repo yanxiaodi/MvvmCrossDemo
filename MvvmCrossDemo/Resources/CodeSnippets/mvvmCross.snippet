@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>MvvmCross property</Title>
+      <Author>Xiaodi Yan</Author>
+      <Shortcut>mvxpropdp</Shortcut>
+      <Description>
+        A property in a ViewModel in the Xamarin project with MvvmCross.
+      </Description>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal>
+          <ID>Property</ID>
+          <ToolTip>Property name</ToolTip>
+          <Default>Property</Default>
+        </Literal>
+        <Object>
+          <ID>type</ID>
+          <ToolTip>Property type</ToolTip>
+          <Default>string</Default>
+        </Object>
+        <Literal>
+          <ID>pProperty</ID>
+          <ToolTip>Private property name</ToolTip>
+          <Default>property</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="csharp">
+        <![CDATA[#region $Property$;
+		private $type$ _$pProperty$;
+        public $type$ $Property$
+        {
+            get => _$pProperty$;
+            set => SetProperty(ref _$pProperty$, value);
+        }
+		#endregion]]>
+      </Code>
+    </Snippet>
+  </CodeSnippet>
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>MvvmCross command</Title>
+      <Author>XiaodiYan</Author>
+      <Shortcut>mvxcmd</Shortcut>
+      <Description>
+        A command in a ViewModel in the Xamarin project with MvvmCross.
+      </Description>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal>
+          <ID>Command</ID>
+          <ToolTip>Command name</ToolTip>
+          <Default>MyCommand</Default>
+        </Literal>
+        <Literal>
+          <ID>pCommand</ID>
+          <ToolTip>Private command name</ToolTip>
+          <Default>myCommand</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="csharp">
+        <![CDATA[
+        #region $Command$Command;
+        private IMvxCommand _$pCommand$Command;
+		    public IMvxCommand $Command$Command
+        {
+            get
+            {
+                _$pCommand$Command = _$pCommand$Command ?? new MvxCommand($Command$);
+                return _$pCommand$Command;
+            }
+        }
+        private void $Command$()
+        {
+            // Implement your logic here.
+        }
+		    #endregion]]>
+      </Code>
+    </Snippet>
+  </CodeSnippet>
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>MvvmCross async command</Title>
+      <Author>XiaodiYan</Author>
+      <Shortcut>mvxcmdasync</Shortcut>
+      <Description>
+        An sync command in a ViewModel in the Xamarin project with MvvmCross.
+      </Description>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal>
+          <ID>Command</ID>
+          <ToolTip>Command name</ToolTip>
+          <Default>MyCommand</Default>
+        </Literal>
+        <Literal>
+          <ID>pCommand</ID>
+          <ToolTip>Private command name</ToolTip>
+          <Default>myCommand</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="csharp">
+        <![CDATA[
+        #region $Command$AsyncCommand;
+        private IMvxAsyncCommand _$pCommand$AsyncCommand;
+        public IMvxAsyncCommand $Command$AsyncCommand
+        {
+            get
+            {
+                _$pCommand$AsyncCommand = _$pCommand$AsyncCommand ?? new MvxAsyncCommand($Command$Async);
+                return _$pCommand$AsyncCommand;
+            }
+        }
+        private async Task $Command$Async()
+        {
+            // Implement your logic here.
+        }
+        #endregion]]>
+      </Code>
+    </Snippet>
+  </CodeSnippet>
+
+</CodeSnippets>

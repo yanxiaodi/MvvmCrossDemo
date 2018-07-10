@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:local="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <TextView
+        android:id="@+id/postTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@string/abc_font_family_title_material"
+        android:clickable="true"
+        local:MvxBind="Text Post.Title; Click ShowPostDetailAsyncCommand" />
+    <TextView
+        android:id="@+id/postBody"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/postTitle"
+        android:clickable="true"
+        local:MvxBind="Text Post.Body; Click ShowPostDetailAsyncCommand" />
+    <Button
+        android:id="@+id/buttonEdit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Edit"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/postBody"
+        local:MvxBind="Click EditPostAsyncCommand" />
+</RelativeLayout>

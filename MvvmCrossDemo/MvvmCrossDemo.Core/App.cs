@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using MvvmCross;
 using MvvmCross.IoC;
 using MvvmCross.ViewModels;
+using MvvmCrossDemo.Core.Models;
+using MvvmCrossDemo.Core.Services;
 using MvvmCrossDemo.Core.ViewModels;
 
 namespace MvvmCrossDemo.Core
@@ -15,7 +18,9 @@ namespace MvvmCrossDemo.Core
                 .EndingWith("Service")
                 .AsInterfaces()
                 .RegisterAsLazySingleton();
-            RegisterAppStart<HomeViewModel>();
+            //RegisterAppStart<FirstViewModel>();
+            RegisterCustomAppStart<CustomMvxAppStart<PostListViewModel>>();
+            ModelMapper.Init();
         }
     }
 }
