@@ -96,7 +96,7 @@
       <Author>XiaodiYan</Author>
       <Shortcut>mvxcmdasync</Shortcut>
       <Description>
-        An sync command in a ViewModel in the Xamarin project with MvvmCross.
+        An async command in a ViewModel in the Xamarin project with MvvmCross.
       </Description>
     </Header>
     <Snippet>
@@ -129,6 +129,80 @@
             // Implement your logic here.
         }
         #endregion]]>
+      </Code>
+    </Snippet>
+  </CodeSnippet>
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>MvvmCross async command by MvxNotifyTask</Title>
+      <Author>XiaodiYan</Author>
+      <Shortcut>mvxcmdnotify</Shortcut>
+      <Description>
+        An async command by MvxNotifyTask in a ViewModel in the Xamarin project with MvvmCross. Use the IsNotCompleted/IsCompleted properties of the MvxNotifyTask to show an indicator. Using the MvxNotifyTask is a recommended way to use an async command.
+      </Description>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal>
+          <ID>Command</ID>
+          <ToolTip>Command name</ToolTip>
+          <Default>MyCommand</Default>
+        </Literal>
+        <Literal>
+          <ID>pCommand</ID>
+          <ToolTip>Private command name</ToolTip>
+          <Default>myCommand</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="csharp">
+        <![CDATA[
+        #region $Command$AsyncCommand;
+
+        #region $Command$TaskNotifier;
+        private MvxNotifyTask _$pCommand$TaskNotifier;
+        /// <summary>
+        /// Use the IsNotCompleted/IsCompleted properties of the $Command$TaskNotifier to show an indicator. Using the MvxNotifyTask is a recommended way to use an async command.
+        /// </summary>
+        /// <value>
+        /// The $Command$ task notifier.
+        /// </value>
+        public MvxNotifyTask $Command$TaskNotifier
+        {
+            get => _$pCommand$TaskNotifier;
+            set => SetProperty(ref _$pCommand$TaskNotifier, value);
+        }
+        #endregion
+        
+        private IMvxCommand _$pCommand$AsyncCommand;
+        public IMvxCommand $Command$AsyncCommand
+        {
+            get
+            {
+                _$pCommand$AsyncCommand = _$pCommand$AsyncCommand ?? new MvxCommand(() =>
+                {
+                    $Command$TaskNotifier = MvxNotifyTask.Create(async () =>
+                        {
+                            await $Command$Async();
+                        },
+                        On$Command$Exception);
+                });
+                return _$pCommand$AsyncCommand;
+            }
+        }
+        private async Task $Command$Async()
+        {
+            // Implement your logic here.
+        }
+
+        private void On$Command$Exception(Exception ex)
+        {
+            // Catch and log the exception here.
+        }
+        #endregion
+        ]]>
       </Code>
     </Snippet>
   </CodeSnippet>
