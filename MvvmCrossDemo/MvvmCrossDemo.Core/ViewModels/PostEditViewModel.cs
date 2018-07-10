@@ -102,5 +102,6 @@ namespace MvvmCrossDemo.Core.ViewModels
         #endregion
 
 
+
     }
 }
