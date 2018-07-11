@@ -392,7 +392,7 @@
             {
                 _$pCommand$AsyncCommand = _$pCommand$AsyncCommand ?? new MvxCommand<$type$>((param) =>
                 {
-                    $Command$TaskNotifier = MvxNotifyTask.Create(async (param) =>
+                    $Command$TaskNotifier = MvxNotifyTask.Create(async () =>
                         {
                             await $Command$Async(param);
                         },
@@ -432,6 +432,9 @@
         <Import>
           <Namespace>MvvmCross.Converters</Namespace>
         </Import>
+        <Import>
+          <Namespace>System.Globalization</Namespace>
+        </Import>
       </Imports>
       <Declarations>
         <Literal>
@@ -457,8 +460,6 @@
       </Declarations>
       <Code Language="csharp">
         <![CDATA[
-        #region $ValueFrom$To$ValueTo$ValueConverter;
-
             public class $ValueFrom$To$ValueTo$ValueConverter : MvxValueConverter<$TypeFrom$, $TypeTo$>
     {
         protected override $TypeTo$ Convert($TypeFrom$ value, Type targetType, object parameter, CultureInfo cultureInfo)
@@ -466,7 +467,6 @@
             // Implement your logic here.
         }
     }
-        #endregion
         ]]>
       </Code>
     </Snippet>
