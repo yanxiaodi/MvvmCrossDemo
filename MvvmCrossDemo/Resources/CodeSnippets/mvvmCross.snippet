@@ -55,6 +55,11 @@
       </Description>
     </Header>
     <Snippet>
+      <Imports>
+        <Import>
+          <Namespace>MvvmCross.Commands</Namespace>
+        </Import>
+      </Imports>
       <Declarations>
         <Literal>
           <ID>Command</ID>
@@ -92,14 +97,74 @@
       <SnippetTypes>
         <SnippetType>Expansion</SnippetType>
       </SnippetTypes>
+      <Title>MvvmCross command with a parameter</Title>
+      <Author>XiaodiYan</Author>
+      <Shortcut>mvxcmdp</Shortcut>
+      <Description>
+        A command with a parameter in a ViewModel in the Xamarin project with MvvmCross.
+      </Description>
+    </Header>
+    <Snippet>
+      <Imports>
+        <Import>
+          <Namespace>MvvmCross.Commands</Namespace>
+        </Import>
+      </Imports>
+      <Declarations>
+        <Literal>
+          <ID>Command</ID>
+          <ToolTip>Command name</ToolTip>
+          <Default>MyCommand</Default>
+        </Literal>
+        <Object>
+          <ID>type</ID>
+          <ToolTip>Parameter type</ToolTip>
+          <Default>string</Default>
+        </Object>
+        <Literal>
+          <ID>pCommand</ID>
+          <ToolTip>Private command name</ToolTip>
+          <Default>myCommand</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="csharp">
+        <![CDATA[
+        #region $Command$Command;
+        private IMvxCommand<$type$> _$pCommand$Command;
+		    public IMvxCommand<$type$> $Command$Command
+        {
+            get
+            {
+                _$pCommand$Command = _$pCommand$Command ?? new MvxCommand<$type$>($Command$);
+                return _$pCommand$Command;
+            }
+        }
+        private void $Command$($type$ param)
+        {
+            // Implement your logic here.
+        }
+		    #endregion]]>
+      </Code>
+    </Snippet>
+  </CodeSnippet>
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
       <Title>MvvmCross async command</Title>
       <Author>XiaodiYan</Author>
-      <Shortcut>mvxcmdasync</Shortcut>
+      <Shortcut>mvxcmda</Shortcut>
       <Description>
         An async command in a ViewModel in the Xamarin project with MvvmCross.
       </Description>
     </Header>
     <Snippet>
+      <Imports>
+        <Import>
+          <Namespace>MvvmCross.Commands</Namespace>
+        </Import>
+      </Imports>
       <Declarations>
         <Literal>
           <ID>Command</ID>
@@ -137,14 +202,74 @@
       <SnippetTypes>
         <SnippetType>Expansion</SnippetType>
       </SnippetTypes>
+      <Title>MvvmCross async command with a parameter</Title>
+      <Author>XiaodiYan</Author>
+      <Shortcut>mvxcmdap</Shortcut>
+      <Description>
+        An async command with a parameter in a ViewModel in the Xamarin project with MvvmCross.
+      </Description>
+    </Header>
+    <Snippet>
+      <Imports>
+        <Import>
+          <Namespace>MvvmCross.Commands</Namespace>
+        </Import>
+      </Imports>
+      <Declarations>
+        <Literal>
+          <ID>Command</ID>
+          <ToolTip>Command name</ToolTip>
+          <Default>MyCommand</Default>
+        </Literal>
+        <Object>
+          <ID>type</ID>
+          <ToolTip>Parameter type</ToolTip>
+          <Default>string</Default>
+        </Object>
+        <Literal>
+          <ID>pCommand</ID>
+          <ToolTip>Private command name</ToolTip>
+          <Default>myCommand</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="csharp">
+        <![CDATA[
+        #region $Command$AsyncCommand;
+        private IMvxAsyncCommand<$type$> _$pCommand$AsyncCommand;
+        public IMvxAsyncCommand<$type$> $Command$AsyncCommand
+        {
+            get
+            {
+                _$pCommand$AsyncCommand = _$pCommand$AsyncCommand ?? new MvxAsyncCommand<$type$>($Command$Async);
+                return _$pCommand$AsyncCommand;
+            }
+        }
+        private async Task $Command$Async($type$ param)
+        {
+            // Implement your logic here.
+        }
+        #endregion]]>
+      </Code>
+    </Snippet>
+  </CodeSnippet>
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
       <Title>MvvmCross async command by MvxNotifyTask</Title>
       <Author>XiaodiYan</Author>
-      <Shortcut>mvxcmdnotify</Shortcut>
+      <Shortcut>mvxcmdn</Shortcut>
       <Description>
         An async command by MvxNotifyTask in a ViewModel in the Xamarin project with MvvmCross. Use the IsNotCompleted/IsCompleted properties of the MvxNotifyTask to show an indicator. Using the MvxNotifyTask is a recommended way to use an async command.
       </Description>
     </Header>
     <Snippet>
+      <Imports>
+        <Import>
+          <Namespace>MvvmCross.Commands</Namespace>
+        </Import>
+      </Imports>
       <Declarations>
         <Literal>
           <ID>Command</ID>
@@ -201,6 +326,146 @@
         {
             // Catch and log the exception here.
         }
+        #endregion
+        ]]>
+      </Code>
+    </Snippet>
+  </CodeSnippet>
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>MvvmCross async command with a parameter by MvxNotifyTask</Title>
+      <Author>XiaodiYan</Author>
+      <Shortcut>mvxcmdpn</Shortcut>
+      <Description>
+        An async command with a parameter by MvxNotifyTask in a ViewModel in the Xamarin project with MvvmCross. Use the IsNotCompleted/IsCompleted properties of the MvxNotifyTask to show an indicator. Using the MvxNotifyTask is a recommended way to use an async command.
+      </Description>
+    </Header>
+    <Snippet>
+      <Imports>
+        <Import>
+          <Namespace>MvvmCross.Commands</Namespace>
+        </Import>
+      </Imports>
+      <Declarations>
+        <Literal>
+          <ID>Command</ID>
+          <ToolTip>Command name</ToolTip>
+          <Default>MyCommand</Default>
+        </Literal>
+        <Object>
+          <ID>type</ID>
+          <ToolTip>Parameter type</ToolTip>
+          <Default>string</Default>
+        </Object>
+        <Literal>
+          <ID>pCommand</ID>
+          <ToolTip>Private command name</ToolTip>
+          <Default>myCommand</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="csharp">
+        <![CDATA[
+        #region $Command$AsyncCommand;
+
+        #region $Command$TaskNotifier;
+        private MvxNotifyTask _$pCommand$TaskNotifier;
+        /// <summary>
+        /// Use the IsNotCompleted/IsCompleted properties of the $Command$TaskNotifier to show an indicator. Using the MvxNotifyTask is a recommended way to use an async command.
+        /// </summary>
+        /// <value>
+        /// The $Command$ task notifier.
+        /// </value>
+        public MvxNotifyTask $Command$TaskNotifier
+        {
+            get => _$pCommand$TaskNotifier;
+            set => SetProperty(ref _$pCommand$TaskNotifier, value);
+        }
+        #endregion
+        
+        private IMvxCommand<$type$> _$pCommand$AsyncCommand;
+        public IMvxCommand<$type$> $Command$AsyncCommand
+        {
+            get
+            {
+                _$pCommand$AsyncCommand = _$pCommand$AsyncCommand ?? new MvxCommand<$type$>((param) =>
+                {
+                    $Command$TaskNotifier = MvxNotifyTask.Create(async (param) =>
+                        {
+                            await $Command$Async(param);
+                        },
+                        On$Command$Exception);
+                });
+                return _$pCommand$AsyncCommand;
+            }
+        }
+        private async Task $Command$Async($type$ param)
+        {
+            // Implement your logic here.
+        }
+
+        private void On$Command$Exception(Exception ex)
+        {
+            // Catch and log the exception here.
+        }
+        #endregion
+        ]]>
+      </Code>
+    </Snippet>
+  </CodeSnippet>
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>MvvmCross value converter</Title>
+      <Author>XiaodiYan</Author>
+      <Shortcut>mvxconverter</Shortcut>
+      <Description>
+        An MvxValueConverter in the Xamarin project with MvvmCross.
+      </Description>
+    </Header>
+    <Snippet>
+      <Imports>
+        <Import>
+          <Namespace>MvvmCross.Converters</Namespace>
+        </Import>
+      </Imports>
+      <Declarations>
+        <Literal>
+          <ID>ValueFrom</ID>
+          <ToolTip>The source value name</ToolTip>
+          <Default>ValueFrom</Default>
+        </Literal>
+        <Literal>
+          <ID>ValueTo</ID>
+          <ToolTip>The target value name</ToolTip>
+          <Default>ValueTo</Default>
+        </Literal>
+        <Object>
+          <ID>TypeFrom</ID>
+          <ToolTip>The source value type</ToolTip>
+          <Default>string</Default>
+        </Object>
+        <Literal>
+          <ID>TypeTo</ID>
+          <ToolTip>The target value type</ToolTip>
+          <Default>string</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="csharp">
+        <![CDATA[
+        #region $ValueFrom$To$ValueTo$ValueConverter;
+
+            public class $ValueFrom$To$ValueTo$ValueConverter : MvxValueConverter<$TypeFrom$, $TypeTo$>
+    {
+        protected override $TypeTo$ Convert($TypeFrom$ value, Type targetType, object parameter, CultureInfo cultureInfo)
+        {
+            // Implement your logic here.
+        }
+    }
         #endregion
         ]]>
       </Code>
