@@ -5,7 +5,7 @@
 	<key>CFBundleDisplayName</key>
 	<string>MvvmCrossDemo.iOS</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.companyname.MvvmCrossDemo.iOS</string>
+	<string>nz.co.xiaoditest</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
