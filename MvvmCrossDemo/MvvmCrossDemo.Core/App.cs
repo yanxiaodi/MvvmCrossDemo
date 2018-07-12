@@ -22,5 +22,10 @@ namespace MvvmCrossDemo.Core
             RegisterCustomAppStart<CustomMvxAppStart<PostListViewModel>>();
             ModelMapper.Init();
         }
+
+        public override void Startup()
+        {
+            base.Startup();
+        }
     }
 }

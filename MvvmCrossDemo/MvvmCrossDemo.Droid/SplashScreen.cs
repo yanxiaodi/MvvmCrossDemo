@@ -10,6 +10,7 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using MvvmCross.Core;
 using MvvmCross.Platforms.Android.Core;
 using MvvmCross.Platforms.Android.Views;
 
@@ -25,6 +26,7 @@ namespace MvvmCrossDemo.Droid
         public SplashScreen()
             : base(Resource.Layout.SplashScreen)
         {
+            MvxSetup.RegisterSetupType<Setup>(this.GetType().Assembly);
         }
     }
 }
