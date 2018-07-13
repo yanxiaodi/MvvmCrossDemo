@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading.Tasks;
-using MvvmCross;
-using MvvmCross.Commands;
+﻿using MvvmCross.Commands;
 using MvvmCross.ViewModels;
 using MvvmCrossDemo.Core.Services;
 
@@ -50,7 +45,7 @@ namespace MvvmCrossDemo.Core.ViewModels
         private void GetGreeting()
         {
             // Implement your logic here.
-            _greetingService.GetGreetingText(UserName);
+            Greeting = _greetingService.GetGreetingText(UserName);
         }
         #endregion
 

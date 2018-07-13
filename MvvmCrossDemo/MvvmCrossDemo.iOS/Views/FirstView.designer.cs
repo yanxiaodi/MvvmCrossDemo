@@ -9,13 +9,39 @@ using System;
 using System.CodeDom.Compiler;
 using UIKit;
 
-namespace Blank
+namespace MvvmCrossDemo.iOS.Views
 {
     [Register ("FirstView")]
     partial class FirstView
     {
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton btnShowGreeting { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel lblGreeting { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UITextField txtUserName { get; set; }
+
         void ReleaseDesignerOutlets ()
         {
+            if (btnShowGreeting != null) {
+                btnShowGreeting.Dispose ();
+                btnShowGreeting = null;
+            }
+
+            if (lblGreeting != null) {
+                lblGreeting.Dispose ();
+                lblGreeting = null;
+            }
+
+            if (txtUserName != null) {
+                txtUserName.Dispose ();
+                txtUserName = null;
+            }
         }
     }
 }
