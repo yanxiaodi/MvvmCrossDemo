@@ -1,6 +1,4 @@
 ﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
@@ -30,7 +28,5 @@ namespace MvvmCrossDemo.Core.Infrastructure.Extensions
             string json = JsonConvert.SerializeObject(obj);
             return new StringContent(json, Encoding.UTF8, contentType);
         }
-
-
     }
 }

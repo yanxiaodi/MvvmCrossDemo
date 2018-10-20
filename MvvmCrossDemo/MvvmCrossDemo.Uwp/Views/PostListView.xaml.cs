@@ -12,6 +12,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using MvvmCross.Platforms.Uap.Views;
 using MvvmCross.ViewModels;
 using MvvmCrossDemo.Core.ViewModels;
 
@@ -20,7 +21,7 @@ using MvvmCrossDemo.Core.ViewModels;
 namespace MvvmCrossDemo.Uwp.Views
 {
     [MvxViewFor(typeof(PostListViewModel))]
-    public sealed partial class PostListView : BaseView
+    public sealed partial class PostListView : MvxWindowsPage
     {
         public PostListView()
         {
