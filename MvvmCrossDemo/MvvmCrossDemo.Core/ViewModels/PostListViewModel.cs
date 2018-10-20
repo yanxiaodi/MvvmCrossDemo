@@ -35,11 +35,11 @@ namespace MvvmCrossDemo.Core.ViewModels
         public override async Task Initialize()
         {
             // Async initialization, YEY!
-
             await base.Initialize();
             await GetPostsAsync();
 
         }
+
 
 
         #region PostList;
@@ -53,7 +53,6 @@ namespace MvvmCrossDemo.Core.ViewModels
 
 
 
-        //#region GetPostsCommand;
         private async Task GetPostsAsync()
         {
             // Implement your logic here.
@@ -64,7 +63,6 @@ namespace MvvmCrossDemo.Core.ViewModels
                     .Select(x => new WrapperPostViewModel(x, ShowPostDetailAsync, EditPostAsync)));
             }
         }
-        //#endregion
 
 
 
@@ -91,7 +89,7 @@ namespace MvvmCrossDemo.Core.ViewModels
             }
         }
 
-
+        
 
     }
 }

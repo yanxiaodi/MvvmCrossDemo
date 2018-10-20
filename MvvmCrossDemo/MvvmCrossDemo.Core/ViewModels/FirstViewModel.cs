@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading.Tasks;
-using MvvmCross;
+﻿using System.Threading.Tasks;
 using MvvmCross.Commands;
+using MvvmCross.Navigation;
 using MvvmCross.ViewModels;
 using MvvmCrossDemo.Core.Services;
 
@@ -12,9 +9,12 @@ namespace MvvmCrossDemo.Core.ViewModels
     public class FirstViewModel: MvxViewModel
     {
         private readonly IGreetingService _greetingService;
-        public FirstViewModel(IGreetingService greetingService)
+        private readonly IMvxNavigationService _navigationService;
+
+        public FirstViewModel(IGreetingService greetingService, IMvxNavigationService navigationService)
         {
             _greetingService = greetingService;
+            _navigationService = navigationService;
         }
         
         #region UserName;
@@ -36,16 +36,40 @@ namespace MvvmCrossDemo.Core.ViewModels
         #endregion
 
 
+
         #region GetGreetingCommand;
-        public IMvxCommand GetGreetingCommand => new MvxCommand(GetGreeting);
+        private IMvxCommand _getGreetingCommand;
+        public IMvxCommand GetGreetingCommand
+        {
+            get
+            {
+                _getGreetingCommand = _getGreetingCommand ?? new MvxCommand(GetGreeting);
+                return _getGreetingCommand;
+            }
+        }
         private void GetGreeting()
         {
+            // Implement your logic here.
             Greeting = _greetingService.GetGreetingText(UserName);
         }
         #endregion
 
 
-
-
+        #region NavToPostListAsyncCommand;
+        private IMvxAsyncCommand _navToPostListAsyncCommand;
+        public IMvxAsyncCommand NavToPostListAsyncCommand
+        {
+            get
+            {
+                _navToPostListAsyncCommand = _navToPostListAsyncCommand ?? new MvxAsyncCommand(NavToPostListAsync);
+                return _navToPostListAsyncCommand;
+            }
+        }
+        private async Task NavToPostListAsync()
+        {
+            // Implement your logic here.
+            await _navigationService.Navigate<PostListViewModel>();
+        }
+        #endregion
     }
 }

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace MvvmCrossDemo.Core.Models.Dto
+﻿namespace MvvmCrossDemo.Core.Models.Dto
 {
     public class BaseResponseMessage
     {

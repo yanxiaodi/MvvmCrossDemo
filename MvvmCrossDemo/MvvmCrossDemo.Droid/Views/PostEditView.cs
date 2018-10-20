@@ -10,12 +10,13 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using MvvmCross.Platforms.Android.Presenters.Attributes;
+using MvvmCross.Platforms.Android.Views;
 
 namespace MvvmCrossDemo.Droid.Views
 {
     [MvxActivityPresentation]
     [Activity(Label = "Post Edit")]
-    public class PostEditView : BaseView
+    public class PostEditView : MvxActivity
     {
         protected override void OnCreate(Bundle bundle)
         {

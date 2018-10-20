@@ -5,6 +5,7 @@ using MvvmCrossDemo.Core.Models.Dto;
 using MvvmCrossDemo.Core.Services;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Text;
 using System.Threading.Tasks;
 using MvvmCross.Commands;
@@ -80,24 +81,77 @@ namespace MvvmCrossDemo.Core.ViewModels
         #endregion
 
 
+        //#region EditPostAsyncCommand;
+        //private IMvxAsyncCommand _editPostAsyncCommand;
+        //public IMvxAsyncCommand EditPostAsyncCommand
+        //{
+        //    get
+        //    {
+        //        _editPostAsyncCommand = _editPostAsyncCommand ?? new MvxAsyncCommand(EditPostAsync);
+        //        return _editPostAsyncCommand;
+        //    }
+        //}
+        //private async Task EditPostAsync()
+        //{
+        //    // Implement your logic here.
+        //    var response = await _postService.UpdatePost(Post.Id, AutoMapper.Mapper.Map<Post>(Post));
+        //    if (response.IsSuccess)
+        //    {
+        //        await _navigationService.Close(this, response.Result);
+        //    }
+        //}
+        //#endregion
+
+
+
+
         #region EditPostAsyncCommand;
-        private IMvxAsyncCommand _editPostAsyncCommand;
-        public IMvxAsyncCommand EditPostAsyncCommand
+
+        #region EditPostTaskNotifier;
+        private MvxNotifyTask _editPostTaskNotifier;
+        /// <summary>
+        /// Use the IsNotCompleted/IsCompleted properties of the MvxNotifyTask to show an indicator. Using the MvxNotifyTask is a recommended way to use an async command.
+        /// </summary>
+        /// <value>
+        /// The edit post task notifier.
+        /// </value>
+        public MvxNotifyTask EditPostTaskNotifier
+        {
+            get => _editPostTaskNotifier;
+            set => SetProperty(ref _editPostTaskNotifier, value);
+        }
+        #endregion
+
+        private IMvxCommand _editPostAsyncCommand;
+        public IMvxCommand EditPostAsyncCommand
         {
             get
             {
-                _editPostAsyncCommand = _editPostAsyncCommand ?? new MvxAsyncCommand(EditPostAsync);
+                _editPostAsyncCommand = _editPostAsyncCommand ?? new MvxCommand(() =>
+                {
+                    EditPostTaskNotifier = MvxNotifyTask.Create(async () =>
+                        {
+                            await EditPostAsync();
+                        },
+                        OnEditPostException);
+                });
                 return _editPostAsyncCommand;
             }
         }
         private async Task EditPostAsync()
         {
             // Implement your logic here.
+            await Task.Delay(2000);
             var response = await _postService.UpdatePost(Post.Id, AutoMapper.Mapper.Map<Post>(Post));
             if (response.IsSuccess)
             {
                 await _navigationService.Close(this, response.Result);
             }
+        }
+
+        private void OnEditPostException(Exception ex)
+        {
+            // Catch and log the exception here.
         }
         #endregion
 
