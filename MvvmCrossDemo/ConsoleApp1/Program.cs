@@ -13,7 +13,7 @@ namespace ConsoleApp1
         {
             Console.WriteLine("Hello World!");
             var postService = new PostService();
-            var response = postService.GetPostList().Result;
+            var response = postService.GetPosts().Result;
             if (response.IsSuccess)
             {
                 response.Result.ForEach(x => Console.WriteLine(x.Title));
