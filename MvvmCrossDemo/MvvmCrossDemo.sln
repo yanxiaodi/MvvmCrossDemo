@@ -26,6 +26,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MvvmCrossDemo.Forms.UI", "M
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmCrossDemo.Forms.Uwp", "MvvmCrossDemo.Forms.Uwp\MvvmCrossDemo.Forms.Uwp.csproj", "{E5EABD4D-3201-4816-BEAD-D575104EEFBC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmCrossDemo.Forms.iOS", "MvvmCrossDemo.Forms.iOS\MvvmCrossDemo.Forms.iOS.csproj", "{99EF82FD-8009-4AF0-A43B-A3FAC16D7C3F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -250,6 +252,22 @@ Global
 		{E5EABD4D-3201-4816-BEAD-D575104EEFBC}.Release|x86.ActiveCfg = Release|x86
 		{E5EABD4D-3201-4816-BEAD-D575104EEFBC}.Release|x86.Build.0 = Release|x86
 		{E5EABD4D-3201-4816-BEAD-D575104EEFBC}.Release|x86.Deploy.0 = Release|x86
+		{99EF82FD-8009-4AF0-A43B-A3FAC16D7C3F}.Debug|Any CPU.ActiveCfg = Debug|iPhone
+		{99EF82FD-8009-4AF0-A43B-A3FAC16D7C3F}.Debug|ARM.ActiveCfg = Debug|iPhone
+		{99EF82FD-8009-4AF0-A43B-A3FAC16D7C3F}.Debug|iPhone.ActiveCfg = Debug|iPhone
+		{99EF82FD-8009-4AF0-A43B-A3FAC16D7C3F}.Debug|iPhone.Build.0 = Debug|iPhone
+		{99EF82FD-8009-4AF0-A43B-A3FAC16D7C3F}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
+		{99EF82FD-8009-4AF0-A43B-A3FAC16D7C3F}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{99EF82FD-8009-4AF0-A43B-A3FAC16D7C3F}.Debug|x64.ActiveCfg = Debug|iPhone
+		{99EF82FD-8009-4AF0-A43B-A3FAC16D7C3F}.Debug|x86.ActiveCfg = Debug|iPhone
+		{99EF82FD-8009-4AF0-A43B-A3FAC16D7C3F}.Release|Any CPU.ActiveCfg = Release|iPhone
+		{99EF82FD-8009-4AF0-A43B-A3FAC16D7C3F}.Release|ARM.ActiveCfg = Release|iPhone
+		{99EF82FD-8009-4AF0-A43B-A3FAC16D7C3F}.Release|iPhone.ActiveCfg = Release|iPhone
+		{99EF82FD-8009-4AF0-A43B-A3FAC16D7C3F}.Release|iPhone.Build.0 = Release|iPhone
+		{99EF82FD-8009-4AF0-A43B-A3FAC16D7C3F}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
+		{99EF82FD-8009-4AF0-A43B-A3FAC16D7C3F}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
+		{99EF82FD-8009-4AF0-A43B-A3FAC16D7C3F}.Release|x64.ActiveCfg = Release|iPhone
+		{99EF82FD-8009-4AF0-A43B-A3FAC16D7C3F}.Release|x86.ActiveCfg = Release|iPhone
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
