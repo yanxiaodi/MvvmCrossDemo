@@ -1,5 +1,6 @@
-﻿<Page
+﻿<forms:MvxFormsWindowsPage
     x:Class="MvvmCrossDemo.Forms.Uwp.MainPage"
+    xmlns:forms="using:MvvmCross.Forms.Platforms.Uap.Views"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:MvvmCrossDemo.Forms.Uwp"
@@ -11,4 +12,4 @@
     <Grid>
 
     </Grid>
-</Page>
+</forms:MvxFormsWindowsPage>

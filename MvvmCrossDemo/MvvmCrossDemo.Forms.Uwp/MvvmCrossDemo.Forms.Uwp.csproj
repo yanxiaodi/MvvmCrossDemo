@@ -130,6 +130,19 @@
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
       <Version>6.1.9</Version>
     </PackageReference>
+    <PackageReference Include="MvvmCross.Forms">
+      <Version>6.2.1</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MvvmCrossDemo.Core\MvvmCrossDemo.Core.csproj">
+      <Project>{703c7710-c22f-4cc3-bc53-225e88a532e1}</Project>
+      <Name>MvvmCrossDemo.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MvvmCrossDemo.Forms.UI\MvvmCrossDemo.Forms.UI.csproj">
+      <Project>{b5456cd7-2443-48e6-b94d-bffb64e5452a}</Project>
+      <Name>MvvmCrossDemo.Forms.UI</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
