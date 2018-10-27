@@ -16,6 +16,10 @@ namespace MvvmCrossDemo.iOS.Views
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton btnNavToPostList { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIButton btnShowGreeting { get; set; }
 
         [Outlet]
@@ -28,6 +32,11 @@ namespace MvvmCrossDemo.iOS.Views
 
         void ReleaseDesignerOutlets ()
         {
+            if (btnNavToPostList != null) {
+                btnNavToPostList.Dispose ();
+                btnNavToPostList = null;
+            }
+
             if (btnShowGreeting != null) {
                 btnShowGreeting.Dispose ();
                 btnShowGreeting = null;

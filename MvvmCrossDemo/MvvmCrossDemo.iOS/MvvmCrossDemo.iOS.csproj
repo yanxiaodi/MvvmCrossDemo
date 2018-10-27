@@ -64,6 +64,10 @@
     <AppExtensionDebugBundleId />
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Views\PostListView.cs" />
+    <Compile Include="Views\PostListView.designer.cs">
+      <DependentUpon>PostListView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\FirstView.cs" />
     <Compile Include="Views\FirstView.designer.cs">
       <DependentUpon>FirstView.cs</DependentUpon>
@@ -76,8 +80,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Content Include="Entitlements.plist" />
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
-    <InterfaceDefinition Include="Main.storyboard" />
+    <InterfaceDefinition Include="Views\FirstView.storyboard" />
     <None Include="packages.config" />
+    <InterfaceDefinition Include="Views\PostListView.storyboard" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="AutoMapper, Version=7.0.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
