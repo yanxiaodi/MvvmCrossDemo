@@ -14,16 +14,8 @@ namespace MvvmCrossDemo.iOS.Views
     [Register ("PostListView")]
     partial class PostListView
     {
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UILabel lableTest { get; set; }
-
         void ReleaseDesignerOutlets ()
         {
-            if (lableTest != null) {
-                lableTest.Dispose ();
-                lableTest = null;
-            }
         }
     }
 }
