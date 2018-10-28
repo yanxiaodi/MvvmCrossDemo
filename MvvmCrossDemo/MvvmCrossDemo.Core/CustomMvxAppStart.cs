@@ -18,5 +18,6 @@ namespace MvvmCrossDemo.Core
         {
             return NavigationService.Navigate<TViewModel>();
         }
+
     }
 }
