@@ -133,6 +133,9 @@
     <PackageReference Include="MvvmCross.Forms">
       <Version>6.2.1</Version>
     </PackageReference>
+    <PackageReference Include="xamarin.essentials">
+      <Version>0.11.0-preview</Version>
+    </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MvvmCrossDemo.Core\MvvmCrossDemo.Core.csproj">

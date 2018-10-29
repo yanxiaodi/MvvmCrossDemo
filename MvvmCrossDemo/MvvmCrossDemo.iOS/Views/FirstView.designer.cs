@@ -20,11 +20,19 @@ namespace MvvmCrossDemo.iOS.Views
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton btnSendEmail { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIButton btnShowGreeting { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UILabel lblGreeting { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel lblLaunchTime { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -37,6 +45,11 @@ namespace MvvmCrossDemo.iOS.Views
                 btnNavToPostList = null;
             }
 
+            if (btnSendEmail != null) {
+                btnSendEmail.Dispose ();
+                btnSendEmail = null;
+            }
+
             if (btnShowGreeting != null) {
                 btnShowGreeting.Dispose ();
                 btnShowGreeting = null;
@@ -45,6 +58,11 @@ namespace MvvmCrossDemo.iOS.Views
             if (lblGreeting != null) {
                 lblGreeting.Dispose ();
                 lblGreeting = null;
+            }
+
+            if (lblLaunchTime != null) {
+                lblLaunchTime.Dispose ();
+                lblLaunchTime = null;
             }
 
             if (txtUserName != null) {
