@@ -12,6 +12,7 @@
             <Entry Text="{Binding UserName, Mode=TwoWay}"></Entry>
             <Button Text="Click Me!" Command="{Binding GetGreetingCommand}"></Button>
             <Label Text="{Binding Greeting}"></Label>
+            <Label Text="{Binding LaunchTime}"></Label>
             <Button Text="Send Email by Xamarin.Essentials" Command="{Binding SendEmailAsyncCommand}"></Button>
 
         </StackLayout>
