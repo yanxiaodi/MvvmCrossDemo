@@ -19,7 +19,8 @@ namespace MvvmCrossDemo.Core.ViewModels
         private readonly IPostService _postService;
         private readonly IMvxNavigationService _navigationService;
 
-        public PostListViewModel(IPostService postService, IMvxNavigationService navigationService)
+        public PostListViewModel(IPostService postService, 
+            IMvxNavigationService navigationService)
         {
             _postService = postService;
             _navigationService = navigationService;
@@ -70,14 +71,16 @@ namespace MvvmCrossDemo.Core.ViewModels
         
         private async void ShowPostDetailAsync(PostViewModel post)
         {
-            await _navigationService.Navigate<PostDetailViewModel, PostViewModel>(post);
+            await _navigationService
+                .Navigate<PostDetailViewModel, PostViewModel>(post);
         }
 
 
 
         private async void EditPostAsync(PostViewModel post)
         {
-            var result = await _navigationService.Navigate<PostEditViewModel, PostViewModel, Post>(post);
+            var result = await _navigationService
+                .Navigate<PostEditViewModel, PostViewModel, Post>(post);
             if (result != null)
             {
                 var target = PostList.FirstOrDefault(x => x.Post.Id == result.Id);

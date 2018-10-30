@@ -21,8 +21,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         local:MvxBind="Text Greeting" />
-	<Button android:width="match_parent"
+	<Button android:layout_width="match_parent"
 		android:layout_height="wrap_content"
         android:text="Post List"
-        local:MvxBind="Click NavToPostListAsyncCommand">
+        local:MvxBind="Click NavToPostListAsyncCommand"/>
+	<TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        local:MvxBind="Text LaunchTime" />
+	<Button android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+        android:text="Send Email by Xamarin.Essentials"
+        local:MvxBind="Click SendEmailAsyncCommand"/>
 </LinearLayout>

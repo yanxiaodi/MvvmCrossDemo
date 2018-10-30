@@ -11,10 +11,19 @@
 
     <StackPanel>
         <TextBlock Text="Your Name"></TextBlock>
-        <TextBox Text="{Binding UserName, Mode=TwoWay}"></TextBox>
+        <TextBox 
+            Text="{Binding UserName, Mode=TwoWay}">
+        </TextBox>
         <Button Content="Click Me!" Command="{Binding GetGreetingCommand}"></Button>
         <TextBlock Text="{Binding Greeting}"></TextBlock>
-        <Button Content="Post List" Command="{Binding NavToPostListAsyncCommand}"></Button>
+        <Button Content="Post List" 
+                Command="{Binding NavToPostListAsyncCommand}">
+        </Button>
+        <TextBlock Text="{Binding LaunchTime}"></TextBlock>
+        <Button Content="Send Email by Xamarin.Essentials" 
+                Command="{Binding SendEmailAsyncCommand}">
+        </Button>
+        
     </StackPanel>
 </views:MvxWindowsPage>
 

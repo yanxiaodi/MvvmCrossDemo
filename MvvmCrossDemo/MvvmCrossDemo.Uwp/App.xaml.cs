@@ -18,7 +18,7 @@ namespace MvvmCrossDemo.Uwp
         }
     }
 
-    public abstract class UwpApplication : MvxApplication<MvxWindowsSetup<Core.App>, Core.App>
+    public abstract class UwpApplication : MvxApplication<Setup, Core.App>
     {
     }
 }

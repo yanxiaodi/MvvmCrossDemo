@@ -141,8 +141,8 @@ namespace MvvmCrossDemo.Core.ViewModels
         private async Task EditPostAsync()
         {
             // Implement your logic here.
-            await Task.Delay(2000);
-            var response = await _postService.UpdatePost(Post.Id, AutoMapper.Mapper.Map<Post>(Post));
+            var response = await _postService
+                .UpdatePost(Post.Id, AutoMapper.Mapper.Map<Post>(Post));
             if (response.IsSuccess)
             {
                 await _navigationService.Close(this, response.Result);
@@ -154,7 +154,5 @@ namespace MvvmCrossDemo.Core.ViewModels
             // Catch and log the exception here.
         }
         #endregion
-
-
     }
 }
