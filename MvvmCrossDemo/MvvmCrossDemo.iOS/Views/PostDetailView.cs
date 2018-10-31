@@ -18,8 +18,8 @@ namespace MvvmCrossDemo.iOS.Views
         {
             base.ViewDidLoad();
             var set = this.CreateBindingSet<PostDetailView, PostDetailViewModel>();
-            set.Bind(lblTitle).To(vm => vm.Post.Title);
-            set.Bind(lblBody).To(vm => vm.Post.Body);
+            set.Bind(lblTitle).For(x => x.Text).To(vm => vm.Post.Title);
+            set.Bind(lblBody).For(x => x.Text).To(vm => vm.Post.Body);
             set.Apply();
         }
     }

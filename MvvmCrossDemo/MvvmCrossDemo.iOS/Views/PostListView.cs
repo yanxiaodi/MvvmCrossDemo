@@ -15,7 +15,7 @@ namespace MvvmCrossDemo.iOS.Views
     [MvxFromStoryboard(nameof(PostListView))]
     public partial class PostListView : MvxTableViewController<PostListViewModel>
     {
-        private MvxStandardTableViewSource _source;
+        private PostListTableSource _source;
         public PostListView (IntPtr handle) : base (handle)
         {
         }
@@ -23,7 +23,8 @@ namespace MvvmCrossDemo.iOS.Views
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
-            _source = new MvxStandardTableViewSource(TableView, UITableViewCellStyle.Subtitle, new NSString("SimpleBindableTableViewCell"), "TitleText Post.Title; DetailText Post.Body");
+            //_source = new MvxStandardTableViewSource(TableView, UITableViewCellStyle.Subtitle, new NSString("PostItemViewCell"), "TitleText Post.Title; DetailText Post.Body");
+            _source = new PostListTableSource(TableView);
             TableView.Source = _source;
 
             var set = this.CreateBindingSet<PostListView, PostListViewModel>();
@@ -32,6 +33,38 @@ namespace MvvmCrossDemo.iOS.Views
             TableView.ReloadData();
         }
 
-        
+
     }
+
+    public class PostListTableSource : MvxTableViewSource
+    {
+        private static readonly NSString PostCellIdentifier = new NSString("PostCell");
+
+        public PostListTableSource(UITableView tableView) : base(tableView)
+        {
+            //tableView.RegisterNibForCellReuse(UINib.FromName("PostCell", NSBundle.MainBundle), PostCellIdentifier);
+        }
+
+
+        protected override UITableViewCell GetOrCreateCellFor(UITableView tableView, NSIndexPath indexPath, object item)
+        {
+            //var cell = (UITableViewCell) TableView.DequeueReusableCell(PostCellIdentifier, indexPath) ?? new UITableViewCell(UITableViewCellStyle.Subtitle, PostCellIdentifier);
+            // You must set the identifier of the table cell in the designer. Otherwise, you must register the table cell first in the code.
+            var cell = TableView.DequeueReusableCell(PostCellIdentifier, indexPath);
+            cell.TextLabel.Text = ((WrapperPostViewModel) item).Post.Title;
+            cell.DetailTextLabel.Text = ((WrapperPostViewModel) item).Post.Body;
+            return cell;
+        }
+
+        public override void RowSelected(UITableView tableView, NSIndexPath indexPath)
+        {
+            base.RowSelected(tableView, indexPath);
+            var item = this.SelectedItem;
+            //System.Diagnostics.Debug.WriteLine((item as WrapperPostViewModel)?.Post.Title);
+            (item as WrapperPostViewModel)?.ShowPostDetailAsyncCommand.Execute();
+        }
+    }
+
+
+
 }
