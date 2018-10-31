@@ -2,6 +2,7 @@
 using MvvmCross.Platforms.Ios.Views;
 using MvvmCrossDemo.Core.ViewModels;
 using System;
+using UIKit;
 
 namespace MvvmCrossDemo.iOS.Views
 {
@@ -25,6 +26,7 @@ namespace MvvmCrossDemo.iOS.Views
             //set.Bind(tipLabel).To(vm => vm.Tip);
             //set.Bind(totalLabel).To(vm => vm.Total);
             set.Apply();
+
         }
     }
 }

@@ -17,9 +17,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" id="628" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" id="628" translatesAutoresizingMaskIntoConstraints="NO" misplaced="YES" ambiguous="YES">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="169"/>
-                                <autoresizingMask key="autoresizingMask" heightSizable="YES" widthSizable="YES"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="661" translatesAutoresizingMaskIntoConstraints="NO">
                                         <rect key="frame" x="0.0" y="0.0" width="240" height="20.5"/>
@@ -33,7 +32,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="683" translatesAutoresizingMaskIntoConstraints="NO">
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="683" translatesAutoresizingMaskIntoConstraints="NO" ambiguous="YES">
                                         <rect key="frame" x="0.0" y="41" width="240" height="128"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <prototypes>
@@ -50,6 +49,9 @@
                                 </subviews>
                             </stackView>
                         </subviews>
+                        <constraints>
+                            <constraint id="1125" firstAttribute="trailingMargin" secondItem="628" secondAttribute="trailing"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="lblTitle" destination="661" id="name-outlet-661"/>
