@@ -73,16 +73,16 @@
     <Compile Include="Views\PostDetailView.designer.cs">
       <DependentUpon>PostDetailView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\PostListView.cs" />
-    <Compile Include="Views\PostListView.designer.cs">
-      <DependentUpon>PostListView.cs</DependentUpon>
-    </Compile>
     <Compile Include="Views\FirstView.cs" />
     <Compile Include="Views\FirstView.designer.cs">
       <DependentUpon>FirstView.cs</DependentUpon>
     </Compile>
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
+    <Compile Include="Views\PostListView.cs" />
+    <Compile Include="Views\PostListView.designer.cs">
+      <DependentUpon>PostListView.cs</DependentUpon>
+    </Compile>
     <None Include="Info.plist">
       <SubType>Designer</SubType>
     </None>

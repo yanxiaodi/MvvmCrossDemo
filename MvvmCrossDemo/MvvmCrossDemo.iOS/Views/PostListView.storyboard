@@ -36,6 +36,7 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections/>
                             </tableViewCell>
                         </prototypes>
                         <connections>
