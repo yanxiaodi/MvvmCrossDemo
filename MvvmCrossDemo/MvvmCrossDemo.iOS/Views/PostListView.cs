@@ -58,9 +58,9 @@ namespace MvvmCrossDemo.iOS.Views
 
             // You must set the identifier of the table cell in the designer. Otherwise, you must register the table cell first in the constructor.
             var cell = TableView.DequeueReusableCell(PostCellIdentifier, indexPath);
-            cell.TextLabel.Text = ((WrapperPostViewModel)item).Post.Title;
-            cell.DetailTextLabel.Text = ((WrapperPostViewModel)item).Post.Body;
-            cell.Accessory = UITableViewCellAccessory.DetailDisclosureButton;
+            //cell.TextLabel.Text = ((WrapperPostViewModel)item).Post.Title;
+            //cell.DetailTextLabel.Text = ((WrapperPostViewModel)item).Post.Body;
+            //cell.Accessory = UITableViewCellAccessory.DetailDisclosureButton;
             return cell;
         }
 
