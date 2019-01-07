@@ -45,7 +45,7 @@ namespace MvvmCrossDemo.iOS.Views
         public PostListTableSource(UITableView tableView) : base(tableView)
         {
             //tableView.RegisterNibForCellReuse(UINib.FromName("PostCell", NSBundle.MainBundle), PostCellIdentifier);
-            tableView.RegisterClassForCellReuse(typeof(PostListTableCell), PostCellIdentifier);
+            //tableView.RegisterClassForCellReuse(typeof(PostListTableCell), PostCellIdentifier);
         }
 
 
@@ -58,9 +58,9 @@ namespace MvvmCrossDemo.iOS.Views
 
             // You must set the identifier of the table cell in the designer. Otherwise, you must register the table cell first in the constructor.
             var cell = TableView.DequeueReusableCell(PostCellIdentifier, indexPath);
-            //cell.TextLabel.Text = ((WrapperPostViewModel)item).Post.Title;
-            //cell.DetailTextLabel.Text = ((WrapperPostViewModel)item).Post.Body;
-            //cell.Accessory = UITableViewCellAccessory.DetailDisclosureButton;
+            cell.TextLabel.Text = ((WrapperPostViewModel)item).Post.Title;
+            cell.DetailTextLabel.Text = ((WrapperPostViewModel)item).Post.Body;
+            cell.Accessory = UITableViewCellAccessory.DetailDisclosureButton;
             return cell;
         }
 
@@ -85,8 +85,8 @@ namespace MvvmCrossDemo.iOS.Views
     [Register("PostCell")]
     public sealed class PostListTableCell : MvxTableViewCell
     {
-        private UILabel lablePostTitle;
-        private UILabel lablePostBody;
+        private UILabel _lablePostTitle;
+        private UILabel _lablePostBody;
 
         public PostListTableCell(IntPtr handle) : base(handle)
         {
@@ -98,7 +98,7 @@ namespace MvvmCrossDemo.iOS.Views
         {
             base.LayoutSubviews();
             var width = ContentView.Frame.Width;
-            lablePostTitle.Frame = new CGRect(20, 7, 100, 30);
+            _lablePostTitle.Frame = new CGRect(20, 7, 100, 30);
         }
 
         //This method is one-way.
@@ -119,10 +119,10 @@ namespace MvvmCrossDemo.iOS.Views
             //lblTest.Lines = 0;
             //lblTest.Font = jobName.Font.WithSize(10);
             //ContentView.AddSubviews(jobId, jobName, hours);
-            lablePostTitle = new UILabel();
-            lablePostBody = new UILabel();
+            _lablePostTitle = new UILabel();
+            _lablePostBody = new UILabel();
             Accessory = UITableViewCellAccessory.DisclosureIndicator;
-            ContentView.AddSubviews(lablePostTitle, lablePostBody);
+            ContentView.AddSubviews(_lablePostTitle, _lablePostBody);
         }
 
         private void InitializeBindings()
@@ -130,8 +130,8 @@ namespace MvvmCrossDemo.iOS.Views
             this.DelayBind(() =>
             {
                 var set = this.CreateBindingSet<PostListTableCell, WrapperPostViewModel>();
-                set.Bind(lablePostTitle).To(vm => vm.Post.Title).TwoWay();
-                set.Bind(lablePostBody).To(vm => vm.Post.Body).TwoWay();
+                set.Bind(_lablePostTitle).To(vm => vm.Post.Title).TwoWay();
+                set.Bind(_lablePostBody).To(vm => vm.Post.Body).TwoWay();
                 set.Apply();
             });
         }
