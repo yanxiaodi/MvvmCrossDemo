@@ -1,6 +1,6 @@
 using MvvmCross.IoC;
 using MvvmCross.ViewModels;
-using MvxFormsMasterDetailDemo.Core.ViewModels.Home;
+using MvxFormsMasterDetailDemo.Core.ViewModels;
 
 namespace MvxFormsMasterDetailDemo.Core
 {
@@ -8,7 +8,7 @@ namespace MvxFormsMasterDetailDemo.Core
     {
         public override void Initialize()
         {
-            RegisterAppStart<HomeViewModel>();
+            RegisterAppStart<MasterDetailViewModel>();
         }
     }
 }

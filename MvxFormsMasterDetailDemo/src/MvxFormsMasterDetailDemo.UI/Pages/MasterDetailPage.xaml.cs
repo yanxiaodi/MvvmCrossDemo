@@ -1,16 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using Xamarin.Forms;
+using MvvmCross.Forms.Presenters.Attributes;
+using MvvmCross.Forms.Views;
+using MvxFormsMasterDetailDemo.Core.ViewModels;
 using Xamarin.Forms.Xaml;
 
 namespace MvxFormsMasterDetailDemo.UI.Pages
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class MasterDetailPage : ContentPage
+    [MvxMasterDetailPagePresentation(Position = MasterDetailPosition.Root, WrapInNavigationPage = false, Title = "MasterDetail Page")]
+    public partial class MasterDetailPage : MvxMasterDetailPage<MasterDetailViewModel>
     {
         public MasterDetailPage()
         {
