@@ -64,14 +64,14 @@
     <AppExtensionDebugBundleId />
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Views\PostEditView.cs" />
+    <Compile Include="Views\PostEditView.designer.cs">
+      <DependentUpon>PostEditView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Setup.cs" />
     <Compile Include="Views\PostDetailView.cs" />
     <Compile Include="Views\PostDetailView.designer.cs">
       <DependentUpon>PostDetailView.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\PostListView.cs" />
-    <Compile Include="Views\PostListView.designer.cs">
-      <DependentUpon>PostListView.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\FirstView.cs" />
     <Compile Include="Views\FirstView.designer.cs">
@@ -79,6 +79,10 @@
     </Compile>
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
+    <Compile Include="Views\PostListView.cs" />
+    <Compile Include="Views\PostListView.designer.cs">
+      <DependentUpon>PostListView.cs</DependentUpon>
+    </Compile>
     <None Include="Info.plist">
       <SubType>Designer</SubType>
     </None>
@@ -91,6 +95,7 @@
     </None>
     <InterfaceDefinition Include="Views\PostListView.storyboard" />
     <InterfaceDefinition Include="Views\PostDetailView.storyboard" />
+    <InterfaceDefinition Include="Views\PostEditView.storyboard" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="AutoMapper, Version=7.0.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">

@@ -34,7 +34,7 @@ namespace MvvmCrossDemo.Core.ViewModels
 
         public override async Task Initialize()
         {
-            // Async initialization, YEY!
+            // Async initialization, Aha!
 
             await base.Initialize();
             await GetPost(_postId);
