@@ -5,13 +5,50 @@
              xmlns:viewModels="clr-namespace:MvxFormsMasterDetailDemo.Core.ViewModels;assembly=MvxFormsMasterDetailDemo.Core"
              x:Class="MvxFormsMasterDetailDemo.UI.Pages.MenuPage"
              x:TypeArguments="viewModels:MenuViewModel" 
-             x:Name="MainContent">
+             x:Name="MainContent"
+             xmlns:behaviors="clr-namespace:Behaviors;assembly=Behaviors"
+             Icon="hamburger.png">
     <ContentPage.Content>
         <StackLayout>
-            <ListView ItemsSource="{Binding MenuItemList}">
+            <StackLayout HeightRequest="40">
+                <StackLayout.IsVisible>
+                    <OnPlatform x:TypeArguments="x:Boolean">
+                        <On Platform="Android, iOS" Value="True" />
+                        <On Platform="UWP" Value="False" />
+                    </OnPlatform>
+                </StackLayout.IsVisible>
+                <StackLayout.Margin>
+                    <OnPlatform x:TypeArguments="Thickness">
+                        <On Platform="iOS" Value="0,20,0,0" />
+                    </OnPlatform>
+                </StackLayout.Margin>
+                <Label Text="HamburgerMenu Demo" Margin="10" VerticalOptions="Center" FontSize="Large"></Label>
+            </StackLayout>
+            <ListView x:Name="MenuList" ItemsSource="{Binding MenuItemList}" 
+                      SelectedItem="{Binding SelectedMenuItem, Mode=TwoWay}">
+                <ListView.Behaviors>
+                    <behaviors:EventHandlerBehavior EventName="ItemSelected">
+                        <behaviors:InvokeCommandAction 
+                            Command="{Binding BindingContext.DataContext.ShowDetailPageAsyncCommand, 
+                            Source={x:Reference MainContent}}"></behaviors:InvokeCommandAction>
+                        </behaviors:EventHandlerBehavior>
+                </ListView.Behaviors>
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
+                            <StackLayout HeightRequest="50">
+                                <Label Text="{Binding}" Margin="20,0,0,0" 
+                                       VerticalOptions="CenterAndExpand"></Label>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <!--<ListView ItemsSource="{Binding MenuItemList}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        --><!--<TextCell Text="{Binding}" Command="{Binding BindingContext.DataContext.ShowDetailPageAsyncCommand, Source={x:Reference MainContent}}" CommandParameter="{Binding}"></TextCell>-->
+                        <!--<ViewCell>
                             <StackLayout Padding="10">
                                 <StackLayout.GestureRecognizers>
                                     <TapGestureRecognizer 
@@ -21,10 +58,10 @@
                                 </StackLayout.GestureRecognizers>
                                 <Label Text="{Binding}" VerticalOptions="Center"></Label>
                             </StackLayout>
-                        </ViewCell>
+                        </ViewCell>--><!--
                     </DataTemplate>
                 </ListView.ItemTemplate>
-            </ListView>
+            </ListView>-->
         </StackLayout>
     </ContentPage.Content>
 </views:MvxContentPage>
